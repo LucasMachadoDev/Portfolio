@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Meu primeiro portfólio">
+        <meta name="keywords" content="portfólio, html, less, js, javascript,css">
+        <meta name="author" content="JLucas G Machado">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="less/dist/style.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <title>Portfólio</title>
+    </head>
+    <body>
+        <header>
+            <div class="header__social__media">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <nav class="header__logo"><a href="index.html">Logo</a></nav>
+                
+                <nav class="header__menu__desktop">
+                    <ul>
+                        <div id="marker"></div>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Sobre">Sobre</a></li>
+                        <li><a href="#Conhecimentos">Conhecimentos</a></li>
+                        <li><a href="#Projetos">Projetos</a></li>
+                        <li><a href="#Contato">Contato</a></li>
+                    </ul>
+                </nav> <!-- Header__menu__mobile -->
+
+                <input type="checkbox" id="menu__hamburger">
+                <label for="menu__hamburger">
+                    <div class="header__hamburger">
+                        <span class="hamburger"></span>
+                    </div>
+                </label>
+
+                <aside class="menu__sidebar">
+                    <nav class="header__menu__mobile">
+                        <ul>
+                            <div id="marker-2"></div>
+                            <li><a href="#Home">Home</a></li>
+                            <li><a href="#Sobre">Sobre</a></li>
+                            <li><a href="#Conhecimentos">Conhecimentos</a></li>
+                            <li><a href="#Projetos">Projetos</a></li>
+                            <li><a href="#Contato">Contato</a></li>
+                        </ul>
+                    </nav> <!-- Header__menu__mobile -->
+                    <div class="header__social__media__mobile">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </aside> <!-- Menu__sidebar -->
+            </div> <!-- Container -->
+        </header>
+
+        <section class="section__banner">
+            <div class="cotainer">
+                <div class="section__img__wrapper">
+                    <img src="img/blake-connally-IKUYGCFmfw4-unsplash.jpg" alt="Blake Connally">
+                    <div class="info__img">
+                        <span>Photo by <a href="https://unsplash.com/@blakeconnally?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Blake Connally</a> on <a href="https://unsplash.com/s/photos/code?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+                    </div>
+                </div>
+            </div> <!-- Container -->
+        </section> <!--Section__banner -->
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
