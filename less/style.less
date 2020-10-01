@@ -3,6 +3,8 @@
 //  Header
 header {
     background: @international-orange-aerospace;
+    z-index: 3;
+    transition: 1s;
 }
 
 header .container {
@@ -49,6 +51,17 @@ header .container {
             color: black;
         }
     }
+}
+
+.header__menu__fixed {
+    position: fixed;
+    background: rgba(253, 80, 0, .5);
+    transition: 1s;
+    width: 100%;
+}
+
+.header__menu__fixed + section {
+    padding-top: 150px;
 }
 
 .header__social__media,
@@ -131,10 +144,10 @@ header .container {
 
 .header__social__media__mobile {
     .fa {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     a::before {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
 
@@ -162,15 +175,15 @@ input[type=checkbox] {
 label {
     position: relative;
     right: 5%;
-    top: 5%;
     display: none;
+    z-index: 2;
 }
 
 .hamburger {
     display: block;
     background-color: black;
     width: 40px;
-    height: 3px;
+    height: 5px;
     position: relative;
     transition: .35s ease-in-out;
     cursor: pointer;
@@ -186,10 +199,10 @@ label {
         transition: .35s ease-in-out;
     }
     &::after{
-        bottom: -8px;
+        bottom: -10px;
     }
     &::before {
-        top: -8px;
+        top: -10px;
     }
 }
 
@@ -198,9 +211,10 @@ label {
     width: 30%;
     height: 100%;
     top: 0;
-    right: -40rem;
+    right: -70rem;
     background: @international-orange-aerospace;
     transition: .5s ease-in-out;
+    z-index: 1;
     .header__menu__mobile {
         position: absolute;
         top: 40%;
@@ -220,28 +234,63 @@ label {
 }
 
 //  Section__banner
+section {
+    overflow: hidden;
+}
+
+.section__banner {
+    width: 100%;
+}
+
 .section__img__wrapper {
-    position: relative;
     width: 100%;
     img{
         background-size: cover;
+        background-position: center;
         background-attachment: fixed;
         width: 100%;
-        height: 100vh;
+        height: 100%;
+        animation: zoom 25s 2s;
+    }
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
 .section__banner__info {
     position: absolute;
-    top: 60%;
+    top: 40%;
     left: 10%;
     h2 {
         font-size: 3rem;
         text-shadow: 10px 10px 5px black;
+        animation: moveIn 1s 2s;
+        position: relative;
     }
     p {
         font-size: 2rem;
         margin: 15px 0;
+        animation: moveIn 1.5s 2s;
+        position: relative;
+    }
+}
+
+@keyframes moveIn {
+    0% {
+        bottom: -70px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 1;
     }
 }
 
@@ -251,7 +300,7 @@ label {
     span {
         position: absolute;
         right: 15%;
-        bottom: 150px;
+        bottom: 50px;
         font-family: @fontText;
         font-size: 1.4rem;
         a:hover{
@@ -260,8 +309,70 @@ label {
     }
 }
 
+//  Section__sobre
+#Sobre {
+    padding: 4rem 0;
+}
+
+#Sobre .container {
+    justify-content: space-evenly;
+    align-items: center;
+    .author__info {
+        width: 50%;
+        text-align: right;
+        padding: 20px 2%;
+        p{
+            padding: 10px 0;
+            letter-spacing: 2px;
+        }
+    }
+    .author__img {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        img {
+            background-size: cover;
+            width: 40%;
+            border-radius: 50%;
+        }
+    }
+}
+
 //  Media querys
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
     .header__menu__desktop,.header__social__media {display: none;}
     label{display: block;}
+
+    .menu__sidebar {
+        width: 100%;
+    }
+
+    .section__banner__info {
+        h2 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.7rem;
+        }
+    }
+
+    .info__img {
+        span {
+            font-size: 1.2rem;
+        }
+        a {
+            font-size: 1rem;
+        }
+    }
+
+    #Sobre .container {
+        .author__info {
+            width: 100%;
+            text-align: center;
+        }
+    
+        .author__img {
+            display: none;
+        }
+    }
 }

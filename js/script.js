@@ -1,3 +1,18 @@
+window.onscroll = function() {
+    headerFixed();
+}
+
+var header = document.querySelector('#header__desktop');
+var fixed = header.offsetTop;
+
+function headerFixed() {
+    if(window.pageYOffset > fixed) {
+        header.classList.add('header__menu__fixed');
+    } else {
+        header.classList.remove('header__menu__fixed');
+    }
+}
+
 const marker = document.querySelector('#marker');
 const marker2 = document.querySelector('#marker-2');
 const item = document.querySelectorAll('.header__menu__desktop ul li a');
