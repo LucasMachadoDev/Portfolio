@@ -55,17 +55,18 @@ header .container {
 
 .header__menu__fixed {
     position: fixed;
-    background: rgba(253, 80, 0, .5);
+    background: rgba(253, 80, 0, .7);
     transition: 1s;
     width: 100%;
 }
 
-.header__menu__fixed + section {
-    padding-top: 150px;
+.header__menu__fixed > div.header__social__media {
+    display: none ;
 }
 
 .header__social__media,
-.header__social__media__mobile {
+.header__social__media__mobile,
+.footer__social__media {
     position: relative;
     top: 70%;
     ul {
@@ -249,7 +250,7 @@ section {
         background-position: center;
         background-attachment: fixed;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         animation: zoom 25s 2s;
     }
 }
@@ -312,6 +313,13 @@ section {
 //  Section__sobre
 #Sobre {
     padding: 4rem 0;
+    width: 95%;
+    background-color: teal;
+    position: relative;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 10px 10px 3px white;
 }
 
 #Sobre .container {
@@ -321,6 +329,10 @@ section {
         width: 50%;
         text-align: right;
         padding: 20px 2%;
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+        }
         p{
             padding: 10px 0;
             letter-spacing: 2px;
@@ -338,6 +350,92 @@ section {
     }
 }
 
+//  Section__conhecimentos
+#Conhecimentos {
+    padding-top: 6rem;
+    .container {
+        flex-direction: column;
+    }
+}
+
+.conhecimentos__header {
+    text-align: center;
+    h2{
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background-color: black;
+        }
+    }
+}
+
+.conhecimento__wrapper {
+    text-align: center;
+    width: 100%;
+    margin: 40px 0;
+    .conhecimento__single {
+        width: 100%;
+        display: inline-block;
+        padding: 30px 2%;
+        position: relative;
+        &:nth-of-type(1) .conhecimento__header i {color: orangered;}
+        &:nth-of-type(2) .conhecimento__header i {
+            color: blue;
+            margin-right: 20px;
+            &:nth-of-type(2) {color: pink;}
+        }
+        &:nth-of-type(3) .conhecimento__header i {color: gold;}
+        &:nth-of-type(5) .conhecimento__header i {color: blue;}
+        .conhecimento__header {
+            h2{
+                margin: 10px 0;
+                font-size: 2rem;
+                font-weight: 300;
+            }
+            i {
+                font-size: 3.5rem;
+                color: white;
+            }
+        }
+        .conhecimento__text {
+            letter-spacing: 2px;
+        }
+    }
+}
+
+.fade-in-element {animation: fadeIn 2s ;}
+
+.hidden {opacity: 0;}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: scale(2,2);
+    }
+    to {opacity: 1;}
+}
+
+//  Footer
+footer {
+    background: @orange-red;
+    width: 100%;
+    padding: 40px 2% 20px 2%;
+    p{
+        display: inline-block;
+        width: 80%;
+    }
+    .footer__social__media {
+        display: inline-block;
+        li {
+            margin-right: 25px;
+        }
+    }
+}
 //  Media querys
 @media screen and (max-width: 868px) {
     .header__menu__desktop,.header__social__media {display: none;}
@@ -374,5 +472,16 @@ section {
         .author__img {
             display: none;
         }
+    }
+
+    footer {
+        .container {flex-wrap: wrap;}
+        p {width: 100%; display: block; margin-bottom: 20px;}
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
     }
 }
