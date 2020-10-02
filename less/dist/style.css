@@ -437,18 +437,8 @@ section {
 .section__img__wrapper img {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   width: 100%;
   height: 100vh;
-  animation: zoom 25s 2s;
-}
-@keyframes zoom {
-  0% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 .section__banner__info {
   position: absolute;
