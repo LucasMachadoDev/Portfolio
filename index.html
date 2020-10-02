@@ -8,14 +8,27 @@
         <meta name="author" content="Lucas G Machado">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+        <script src="js/jquery.js"></script>
         <link rel="stylesheet" href="less/dist/style.css">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
         <link rel="manifest" href="site.webmanifest">
+        <link rel="preload" href="less/dist/style.css" as="style">
+        <link rel="preload" href="js/jquery.js" as="script">
+        <link rel="preload" href="js/script.js" as="script">
         <title>Portfólio</title>
     </head>
     <body>
+        <div class="spinner-wrapper">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+
         <header id="header__desktop">
             <div class="header__social__media">
                 <ul>
@@ -202,6 +215,17 @@
             </div> <!-- Container -->
         </footer>
 
+        <script>
+            $(document).ready(function() {
+            //Preloader
+            preloaderFadeOutTime = 4000;
+            function hidePreloader() {
+            var preloader = $('.spinner-wrapper');
+            preloader.fadeOut(preloaderFadeOutTime);
+            }
+            hidePreloader();
+            });
+        </script>
         <script src="js/script.js"></script>
     </body>
 </html> 
