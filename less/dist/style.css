@@ -105,6 +105,31 @@ body {
   width: 100%;
   display: flex;
 }
+#Conhecimentos,
+#Projetos,
+footer {
+  margin-top: 6rem;
+}
+#Conhecimentos .container,
+#Projetos .container,
+#Contato .container {
+  flex-direction: column;
+}
+.section__header {
+  text-align: center;
+}
+.section__header h2 {
+  position: relative;
+  display: inline-block;
+}
+.section__header h2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+}
 header {
   background: #fd5200ff;
   z-index: 3;
@@ -432,47 +457,32 @@ section {
   width: 40%;
   border-radius: 50%;
 }
-#Conhecimentos {
-  padding-top: 6rem;
-}
-#Conhecimentos .container {
-  flex-direction: column;
-}
-.conhecimentos__header {
-  text-align: center;
-}
-.conhecimentos__header h2 {
-  position: relative;
-  display: inline-block;
-}
-.conhecimentos__header h2::after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  background-color: black;
-}
 .conhecimento__wrapper {
   text-align: center;
-  width: 100%;
-  margin: 40px 0;
+  margin: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 3rem;
 }
 .conhecimento__wrapper .conhecimento__single {
   width: 100%;
-  display: inline-block;
   padding: 30px 2%;
   position: relative;
+  display: grid;
+  box-shadow: 10px 20px 15px white;
+  background-color: slateblue;
 }
 .conhecimento__wrapper .conhecimento__single:nth-of-type(1) .conhecimento__header i {
   color: orangered;
 }
 .conhecimento__wrapper .conhecimento__single:nth-of-type(2) .conhecimento__header i {
-  color: blue;
+  background: linear-gradient(#000096, #00005e);
   margin-right: 20px;
 }
 .conhecimento__wrapper .conhecimento__single:nth-of-type(2) .conhecimento__header i:nth-of-type(2) {
   color: pink;
+  background: none;
 }
 .conhecimento__wrapper .conhecimento__single:nth-of-type(3) .conhecimento__header i {
   color: gold;
@@ -492,35 +502,94 @@ section {
 .conhecimento__wrapper .conhecimento__single .conhecimento__text {
   letter-spacing: 2px;
 }
-.fade-in-element {
-  animation: fadeIn 2s ;
+.slide-left-element {
+  animation: slideLeft 2s;
+}
+.slide-right-element {
+  animation: slideRight 2s;
 }
 .hidden {
   opacity: 0;
 }
-@keyframes fadeIn {
+.hidden2 {
+  opacity: 0;
+}
+@keyframes slideLeft {
   from {
     opacity: 0;
-    transform: scale(2, 2);
+    left: -30rem;
   }
   to {
     opacity: 1;
+    left: 0;
   }
 }
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    right: -30rem;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+#Projetos {
+  background: #af3800ff;
+}
+#Projetos .container {
+  align-items: center;
+  padding-top: 6rem;
+}
+#Projetos .container .section__projetos__wrapper {
+  margin: 6rem 0;
+}
 footer {
-  background: #fe621dff;
+  background: white;
   width: 100%;
   padding: 40px 2% 20px 2%;
 }
 footer p {
+  color: black;
   display: inline-block;
   width: 80%;
 }
 footer .footer__social__media {
   display: inline-block;
 }
+footer .footer__social__media h5 {
+  font-size: 1.4rem;
+  color: black;
+  padding-bottom: 10px;
+}
 footer .footer__social__media li {
   margin-right: 25px;
+}
+footer .footer__social__media li:nth-of-type(2) a::before {
+  content: '\f16d';
+  background: linear-gradient(190deg, #515bd4, #8134af, #dd2a7b, #f58529, #feda77);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid #f58529;
+}
+footer .footer__social__media li a::before {
+  font-size: 2.5rem;
+}
+footer .footer__social__media li .fa {
+  font-size: 2.5rem;
+}
+footer .footer__social__media li a#link-top i {
+  background-color: coral;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+footer .footer__social__media li .fa-arrow-up::before {
+  position: relative;
+  top: 3px;
 }
 @media screen and (max-width: 868px) {
   .header__menu__desktop,
@@ -563,6 +632,13 @@ footer .footer__social__media li {
 }
 @media screen and (max-width: 768px) {
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .conhecimento__wrapper {
+    display: block;
+    margin: 40px 10px;
+  }
+  .conhecimento__wrapper .conhecimento__single {
+    margin-bottom: 25px;
   }
 }

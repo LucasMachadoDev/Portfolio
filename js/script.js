@@ -3,6 +3,7 @@ window.onscroll = function() {
 }
 
 var header = document.querySelector('#header__desktop');
+var links2 = document.querySelectorAll('nav ul a');
 var fixed = header.offsetTop;
 
 function headerFixed() {
@@ -12,37 +13,6 @@ function headerFixed() {
         header.classList.remove('header__menu__fixed');
     }
 }
-
-(function () {
-    var elements;
-    var windowHeight;
-
-    function init() {
-        elements = document.querySelectorAll('.hidden');
-        windowHeight = window.innerHeight;
-    }
-
-    function checkPosition() {
-        for(var i = 0; i <elements.length; i++) {
-            var element = elements[i];
-            var positionFromTop = elements[i].getBoundingClientRect().top;
-
-            if(positionFromTop - windowHeight <= 0) {
-                element.classList.add('fade-in-element');
-                element.classList.remove('hidden')
-            } else {
-                element.classList.remove('fade-in-element');
-                element.classList.add('hidden')
-            }
-        }
-    }
-
-    window.addEventListener('scroll', checkPosition);
-    window.addEventListener('resize', init);
-
-    init();
-    checkPosition();
-})();
 
 const marker = document.querySelector('#marker');
 const marker2 = document.querySelector('#marker-2');
@@ -70,3 +40,66 @@ item2.forEach(Link => {
         indicatorMobile(e.target);
     })
 })
+
+const links = document.querySelectorAll("#header__desktop ul  a");
+
+for (const link of links) {
+    link.addEventListener("click", clickHandler);
+}
+
+function clickHandler(e) {
+    e.preventDefault();
+    const href = this.getAttribute("href");
+    const offsetTop = document.querySelector(href).offsetTop;
+
+    scroll({
+        top: offsetTop,
+        behavior: "smooth"
+    });
+}
+
+(function () {
+    var elements;
+    var windowHeight;
+
+    function init() {
+        elements = document.querySelectorAll('.hidden');
+        elements2 = document.querySelectorAll('.hidden2');
+        windowHeight = window.innerHeight;
+    }
+
+    function checkPosition() {
+        for(var i = 0; i <elements.length; i++) {
+            var element = elements[i];
+            var positionFromTop = elements[i].getBoundingClientRect().top;
+
+            if(positionFromTop - windowHeight <= 0) {
+                element.classList.add('slide-left-element');
+                element
+                element.classList.remove('hidden')
+            } else {
+                element.classList.remove('slide-left-element');
+                element.classList.add('hidden')
+            }
+        }
+        for(var n = 0; n <elements2.length; n++) {
+            var element = elements2[n];
+            var positionFromTop = elements2[n].getBoundingClientRect().top;
+
+            if(positionFromTop - windowHeight <= 0) {
+                element.classList.add('slide-right-element');
+                element
+                element.classList.remove('hidden2')
+            } else {
+                element.classList.remove('slide-right-element');
+                element.classList.add('hidden2')
+            }
+        }
+    }
+
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', init);
+
+    init();
+    checkPosition();
+})();

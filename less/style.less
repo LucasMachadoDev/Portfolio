@@ -351,43 +351,25 @@ section {
 }
 
 //  Section__conhecimentos
-#Conhecimentos {
-    padding-top: 6rem;
-    .container {
-        flex-direction: column;
-    }
-}
-
-.conhecimentos__header {
-    text-align: center;
-    h2{
-        position: relative;
-        display: inline-block;
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 5px;
-            background-color: black;
-        }
-    }
-}
-
 .conhecimento__wrapper {
     text-align: center;
-    width: 100%;
-    margin: 40px 0;
+    margin: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 3rem;
     .conhecimento__single {
         width: 100%;
-        display: inline-block;
         padding: 30px 2%;
         position: relative;
+        display: grid;
+        box-shadow: 10px 20px 15px white;
+        background-color: slateblue;
         &:nth-of-type(1) .conhecimento__header i {color: orangered;}
         &:nth-of-type(2) .conhecimento__header i {
-            color: blue;
+            background: linear-gradient( rgb(0, 0, 150), rgb(0, 0, 94));
             margin-right: 20px;
-            &:nth-of-type(2) {color: pink;}
+            &:nth-of-type(2) {color: pink;background: none;}
         }
         &:nth-of-type(3) .conhecimento__header i {color: gold;}
         &:nth-of-type(5) .conhecimento__header i {color: blue;}
@@ -408,31 +390,84 @@ section {
     }
 }
 
-.fade-in-element {animation: fadeIn 2s ;}
+.slide-left-element {animation: slideLeft 2s;}
+.slide-right-element {animation: slideRight 2s;}
 
 .hidden {opacity: 0;}
+.hidden2 {opacity: 0;}
 
-@keyframes fadeIn {
+@keyframes slideLeft {
     from{
         opacity: 0;
-        transform: scale(2,2);
+        left: -30rem;
     }
-    to {opacity: 1;}
+    to {opacity: 1;
+        left: 0;
+    }
+}
+@keyframes slideRight {
+    from{
+        opacity: 0;
+        right: -30rem;
+    }
+    to {opacity: 1;
+        right: 0;
+    }
+}
+
+//  Section__projetos
+#Projetos  {
+    background: @rust;
+    .container {
+        align-items: center;
+        padding-top: 6rem;
+        .section__projetos__wrapper {margin: 6rem 0;}
+    }
 }
 
 //  Footer
 footer {
-    background: @orange-red;
+    background: white;
     width: 100%;
     padding: 40px 2% 20px 2%;
     p{
+        color: black;
         display: inline-block;
         width: 80%;
     }
     .footer__social__media {
         display: inline-block;
+        h5 {
+            font-size: 1.4rem;
+            color: black;
+            padding-bottom: 10px;
+        }
         li {
             margin-right: 25px;
+            &:nth-of-type(2) a::before {
+                content: '\f16d';;
+                background: linear-gradient(190deg, #515bd4, #8134af,#dd2a7b,#f58529,#feda77);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                border-bottom: 3px solid #f58529;
+            }
+            a::before {font-size: 2.5rem;}
+            .fa {font-size: 2.5rem;}
+            a#link-top {
+                i {
+                    background-color: coral;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    border-radius: 50%;
+                    font-size: 2rem;
+                }
+            }
+            .fa-arrow-up::before {
+                position: relative;
+                top: 3px;
+            }
         }
     }
 }
@@ -482,6 +517,13 @@ footer {
 
 @media screen and (max-width: 768px) {
     h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    .conhecimento__wrapper {
+        display: block;
+        margin: 40px 10px;
+        .conhecimento__single {
+            margin-bottom: 25px;
+        }
     }
 }
