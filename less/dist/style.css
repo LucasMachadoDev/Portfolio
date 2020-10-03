@@ -437,8 +437,18 @@ section {
 .section__img__wrapper img {
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   width: 100%;
   height: 100vh;
+  animation: zoom 25s 2s;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .section__banner__info {
   position: absolute;
@@ -531,7 +541,7 @@ section {
   padding: 30px 2%;
   position: relative;
   display: grid;
-  box-shadow: 10px 20px 15px white;
+  box-shadow: 5px 5px 5px black;
   background-color: slateblue;
 }
 .conhecimento__wrapper .conhecimento__single:nth-of-type(1) .conhecimento__header i {
@@ -556,12 +566,23 @@ section {
   font-size: 2rem;
   font-weight: 300;
 }
+.conhecimento__wrapper .conhecimento__single .conhecimento__header p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: bolder;
+}
 .conhecimento__wrapper .conhecimento__single .conhecimento__header i {
   font-size: 3.5rem;
   color: white;
 }
 .conhecimento__wrapper .conhecimento__single .conhecimento__text {
   letter-spacing: 2px;
+}
+.h75 {
+  height: 75%;
+}
+.h100 {
+  max-height: 75%;
 }
 .slide-left-element {
   animation: slideLeft 2s;
@@ -694,6 +715,9 @@ footer .footer__social__media li .fa-arrow-up::before {
 @media screen and (max-width: 768px) {
   h2 {
     font-size: 1.5rem;
+  }
+  .section__img__wrapper img {
+    animation: none;
   }
   .conhecimento__wrapper {
     display: block;

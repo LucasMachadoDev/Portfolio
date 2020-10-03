@@ -1,3 +1,7 @@
+$('.menu__sidebar li a').click(function() {
+    $('#menu__hamburger').trigger('click'); 
+});
+
 window.onscroll = function() {
     headerFixed();
 }
@@ -41,7 +45,7 @@ item2.forEach(Link => {
     })
 })
 
-const links = document.querySelectorAll("#header__desktop ul  a");
+const links = document.querySelectorAll("#header__desktop ul  a.nav__link");
 
 for (const link of links) {
     link.addEventListener("click", clickHandler);
