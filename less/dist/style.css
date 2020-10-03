@@ -499,15 +499,14 @@ section {
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 10px 10px 3px white;
+  box-shadow: 0 0 20px white;
 }
 #Sobre .container {
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 #Sobre .container .author__info {
   width: 50%;
-  text-align: right;
   padding: 20px 2%;
 }
 #Sobre .container .author__info h2 {
@@ -519,13 +518,10 @@ section {
   letter-spacing: 2px;
 }
 #Sobre .container .author__img {
-  display: flex;
-  justify-content: center;
-  width: 50%;
+  width: 25%;
 }
 #Sobre .container .author__img img {
-  background-size: cover;
-  width: 40%;
+  width: 100%;
   border-radius: 50%;
 }
 .conhecimento__wrapper {
