@@ -345,6 +345,9 @@ span.open__hamburger {left: 7.5%;}
             &:first-child{
                 margin-right: 1rem;
             }
+            &:last-child{
+                z-index: 3;
+            }
             &:hover { 
                 transform: rotateY(0deg) scale(1.15);
                 box-shadow: 0 25px 40px rgba(0, 0, 0, .5);
@@ -370,6 +373,7 @@ span.open__hamburger {left: 7.5%;}
                     width: 100%;
                     height: 100%;
                     background: linear-gradient(180deg, @midnight-green-eagle-green, rgba(0,0,0,.5));
+                    border-radius: 30px;
                     z-index: 1;
                     opacity: 0;
                     transition: .5s;
@@ -396,16 +400,22 @@ span.open__hamburger {left: 7.5%;}
                 align-items: flex-end;
                 justify-content: center;
                 padding: 20px;
+                opacity: 0;
+                &:hover {
+                    opacity: 1;
+                }
                 div {
                     margin-bottom: 2rem;
                 }
                 &:hover h2 {
                     transform: translateY(0px);
                     transition-delay: .4s;
+                    opacity: 1;
                 }
                 &:hover p{
                     transform: translateY(0px);
                     transition-delay: .5s;
+                    opacity: 1;
                 }
                 
                 h2 {
@@ -415,6 +425,7 @@ span.open__hamburger {left: 7.5%;}
                     transition: .5s;
                     margin-bottom: 5px;
                     transform: translateY(40rem);
+                    opacity: 0;
                 }
 
                 p {
@@ -423,6 +434,7 @@ span.open__hamburger {left: 7.5%;}
                     font-size: 1.3rem;
                     transition: .5s;
                     transform: translateY(40rem);
+                    opacity: 0;
                     margin: 1rem 0;
                     a {
                         transition: .5s;
@@ -581,6 +593,9 @@ footer {
     background: #444;
     aside header {
         background: @bg-color;
+        .social__medias a{
+            color: white;
+        }
     }
     h2, a, p {
         color: @text-color
@@ -597,9 +612,6 @@ footer {
         background: rgb(63, 63, 63);
         .container {
             p {color: @text-color;}
-        .social__medias a{
-            color: white;
-        }
         }
     }
 
@@ -617,6 +629,32 @@ footer {
     #conhecimento .container .conhecimento__wrapper {max-width: 80%;}
     #projetos .projetos__wrapper {max-width: 80%;}
     #sobre .sobre__container {max-width: 80%;}
+}
+
+@media screen and (max-width: 1024px) {
+    #projetos{
+        .projetos__wrapper {
+            width: 100%;
+            &:hover .projetos__single {
+                transform: rotate(0deg);
+            }
+            .projetos__single {
+                width: 100%;
+                &:first-child{
+                    margin-bottom: 1rem;
+                    margin-right: 0;
+                }
+                &:hover { 
+                    transform: rotate(0deg) scale(.95);
+    
+                }
+                &:hover ~ .projetos__single { transform: rotate(0deg);}
+                .projetos__text div {
+                    width: 90%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -666,6 +704,18 @@ footer {
         .sobre__container {
             .sobre__text {width: 100%; text-align: center;}
             .img__wrapper {display: none;}
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #projetos{
+        .projetos__wrapper {
+            .projetos__single {
+                .projetos__text div {
+                    width: 100%;
+                }
+            }
         }
     }
 }
