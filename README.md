@@ -1,10 +1,6 @@
 # Portfólio
 
-Portfólio oficial.
-
-## Tarefas
-
-O controle das tarefas desse projeto será realizado no Github
+Portfólio oficial. Criado usando JavaScript e Less
 
 ## Icones
 
