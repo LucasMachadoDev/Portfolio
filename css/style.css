@@ -709,7 +709,7 @@ span.open__hamburger {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 20px;
+  padding: 30px;
   opacity: 0;
 }
 /* line 403, style.less */
