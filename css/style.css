@@ -602,7 +602,7 @@ span.open__hamburger {
 /* line 325, style.less */
 #projetos .projetos__wrapper {
   position: relative;
-  width: 990px;
+  width: 960px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -613,7 +613,7 @@ span.open__hamburger {
   -webkit-perspective: 500px;
           perspective: 500px;
   overflow: hidden;
-  margin-top: 8rem;
+  margin-top: 7.5rem;
 }
 /* line 334, style.less */
 #projetos .projetos__wrapper:hover .projetos__single {
@@ -945,30 +945,30 @@ footer .container p {
   -webkit-transform: translateX(36px);
           transform: translateX(36px);
 }
-/* line 592, style.less */
+/* line 591, style.less */
 .night-mode {
   background: #444;
 }
-/* line 594, style.less */
+/* line 593, style.less */
 .night-mode aside header {
   background: #2b2b2b;
 }
-/* line 596, style.less */
+/* line 595, style.less */
 .night-mode aside header .social__medias a {
   color: white;
 }
-/* line 600, style.less */
+/* line 599, style.less */
 .night-mode h2,
 .night-mode a,
 .night-mode p {
   color: #dddddd;
 }
-/* line 604, style.less */
+/* line 603, style.less */
 .night-mode html,
 .night-mode body {
   background: #2b2b2b;
 }
-/* line 605, style.less */
+/* line 604, style.less */
 .night-mode #conhecimento,
 .night-mode #projetos,
 .night-mode #sobre {
@@ -976,161 +976,161 @@ footer .container p {
   -webkit-transition: background .5s;
   transition: background .5s;
 }
-/* line 608, style.less */
+/* line 607, style.less */
 .night-mode .section__header {
   background: #1f1e1e;
 }
-/* line 611, style.less */
+/* line 610, style.less */
 .night-mode footer {
   background: #3f3f3f;
 }
-/* line 614, style.less */
+/* line 613, style.less */
 .night-mode footer .container p {
   color: #dddddd;
 }
-/* line 618, style.less */
+/* line 617, style.less */
 .night-mode #conhecimento .conhecimento__wrapper .conhecimento__limiter .conhecimento__single {
   background: linear-gradient(45deg, #000000, transparent);
 }
-/* line 620, style.less */
+/* line 619, style.less */
 .night-mode #conhecimento .conhecimento__header h2,
 .night-mode #conhecimento .conhecimento__header p {
   color: white;
 }
-/* line 622, style.less */
+/* line 621, style.less */
 .night-mode #conhecimento .conhecimento__text p {
   color: white;
 }
-/* line 623, style.less */
+/* line 622, style.less */
 .night-mode #projetos .projetos__wrapper .projetos__single .projetos__img__wrapper {
   border-color: white;
 }
-/* line 624, style.less */
+/* line 623, style.less */
 .night-mode #sobre .sobre__container .img__wrapper img {
   border-color: white;
 }
 @media screen and (min-width: 1980px) {
-  /* line 628, style.less */
+  /* line 627, style.less */
   .section__header {
     max-width: 80%;
   }
-  /* line 629, style.less */
+  /* line 628, style.less */
   #conhecimento .container .conhecimento__wrapper {
     max-width: 80%;
   }
-  /* line 630, style.less */
+  /* line 629, style.less */
   #projetos .projetos__wrapper {
     max-width: 80%;
   }
-  /* line 631, style.less */
+  /* line 630, style.less */
   #sobre .sobre__container {
     max-width: 80%;
   }
 }
 @media screen and (max-width: 1024px) {
-  /* line 636, style.less */
+  /* line 635, style.less */
   #projetos .projetos__wrapper {
     width: 100%;
   }
-  /* line 638, style.less */
+  /* line 637, style.less */
   #projetos .projetos__wrapper:hover .projetos__single {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  /* line 641, style.less */
+  /* line 640, style.less */
   #projetos .projetos__wrapper .projetos__single {
     width: 100%;
   }
-  /* line 643, style.less */
+  /* line 642, style.less */
   #projetos .projetos__wrapper .projetos__single:first-child {
     margin-bottom: 1rem;
     margin-right: 0;
   }
-  /* line 647, style.less */
+  /* line 646, style.less */
   #projetos .projetos__wrapper .projetos__single:hover {
     -webkit-transform: rotate(0deg) scale(0.95);
             transform: rotate(0deg) scale(0.95);
   }
-  /* line 651, style.less */
+  /* line 650, style.less */
   #projetos .projetos__wrapper .projetos__single:hover ~ .projetos__single {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  /* line 652, style.less */
+  /* line 651, style.less */
   #projetos .projetos__wrapper .projetos__single .projetos__text div {
     width: 90%;
   }
 }
 @media screen and (max-width: 960px) {
-  /* line 661, style.less */
+  /* line 660, style.less */
   aside header {
     width: 100%;
   }
-  /* line 663, style.less */
+  /* line 662, style.less */
   aside header .menu__sidebar {
     text-align: center;
   }
-  /* line 669, style.less */
+  /* line 668, style.less */
   input#menu__hamburger[type=checkbox]:checked ~ label[for=menu__hamburger] {
     left: 85%;
   }
-  /* line 674, style.less */
+  /* line 673, style.less */
   span.close__hamburger,
   span.open__hamburger {
     display: none;
   }
-  /* line 677, style.less */
+  /* line 676, style.less */
   h2 {
     font-size: 2rem !important;
   }
-  /* line 679, style.less */
+  /* line 678, style.less */
   #home {
     background-attachment: scroll;
   }
-  /* line 685, style.less */
+  /* line 684, style.less */
   #conhecimento .container .conhecimento__wrapper .conhecimento__limiter {
     text-align: center !important;
   }
-  /* line 687, style.less */
+  /* line 686, style.less */
   #conhecimento .container .conhecimento__wrapper .conhecimento__limiter .conhecimento__single {
     width: 100%;
     -webkit-box-shadow: none !important;
             box-shadow: none !important;
   }
-  /* line 694, style.less */
+  /* line 693, style.less */
   #projetos .projetos__wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  /* line 696, style.less */
+  /* line 695, style.less */
   #projetos .projetos__wrapper .projetos__single {
     width: 100%;
     margin: 2rem 0;
   }
-  /* line 702, style.less */
+  /* line 701, style.less */
   #sobre {
     min-height: auto;
   }
-  /* line 705, style.less */
+  /* line 704, style.less */
   #sobre .sobre__container .sobre__text {
     width: 100%;
     text-align: center;
   }
-  /* line 706, style.less */
+  /* line 705, style.less */
   #sobre .sobre__container .img__wrapper {
     display: none;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 715, style.less */
+  /* line 714, style.less */
   #projetos .projetos__wrapper .projetos__single .projetos__text div {
     width: 100%;
   }
 }
 @media screen and (max-width: 410px) {
-  /* line 726, style.less */
+  /* line 725, style.less */
   #projetos .projetos__wrapper .projetos__single {
     min-height: 36rem;
   }

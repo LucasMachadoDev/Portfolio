@@ -324,13 +324,13 @@ span.open__hamburger {left: 7.5%;}
     }
     .projetos__wrapper {
         position: relative;
-        width: 990px;
+        width: 960px;
         display: flex;
         flex-wrap: wrap;
         transform-style: preserve-3d;
         perspective: 500px;
         overflow: hidden;
-        margin-top: 8rem;
+        margin-top: 7.5rem;
         &:hover .projetos__single {
             transform: rotateY(25deg);
         }
@@ -587,12 +587,11 @@ footer {
 
 //  Night-mode
 @text-color: #ddd;
-@bg-color: #2b2b2b;
 
 .night-mode {
     background: #444;
     aside header {
-        background: @bg-color;
+        background: #2b2b2b;
         .social__medias a{
             color: white;
         }
@@ -601,7 +600,7 @@ footer {
         color: @text-color
     }
 
-    html, body {background: @bg-color;}
+    html, body {background: #2b2b2b;}
     #conhecimento,
     #projetos,
     #sobre {background: rgb(48, 48, 48); transition: background .5s;}
