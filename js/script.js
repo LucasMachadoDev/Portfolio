@@ -11,7 +11,7 @@ $(function() {
 });
 
     $('.menu__sidebar li a').click(function() {
-        $('#menu__hamburger').trigger('click'); 
+        $('[for=menu__hamburger]').trigger('click'); 
     });
 
     (function () {
@@ -202,11 +202,17 @@ nightMode.addEventListener('click', () => {
 // navLinkFade
 const navSlide = () => {
     const burger = document.querySelector('[for=menu__hamburger]');
-    const nav = document.querySelector('header');
+    const nav = document.querySelector('.menu__sidebar ul, .social__medias ul');
     const navLinks = document.querySelectorAll('.menu__sidebar li, .social__medias li');
 
     burger.addEventListener('click', ()=> {
-        nav.classList.toggle('nav-active');
+        // nav.classList.toggle('nav-active');
+
+        if(nav.classList == ''){
+            nav.classList.add('nav-active');
+        } else {
+            nav.classList.remove('nav-active');
+        }
 
         navLinks.forEach((link, index)=> {
             if(link.style.animation) {
