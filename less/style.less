@@ -8,7 +8,7 @@ aside {
     }
     header {
         position: fixed;
-        left: -100rem;
+        left: -300rem;
         top: 0;
         width: 30%;
         height: 100vh;
@@ -39,6 +39,8 @@ aside {
             display: inline-block;
             li {
                 margin-bottom: 8px;
+                position: relative;
+                opacity: 0;
                 &:hover {
                     border-radius: 20px;
                     color: black;
@@ -61,6 +63,7 @@ aside {
             }
             li{
                 position: relative;
+                opacity: 0;
             }
             a{
                 font-size: 2rem;
@@ -202,7 +205,9 @@ span.open__hamburger {left: 7.5%;}
     .img__info {
         position: absolute;
         bottom: 7%;
-        right: 7%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
         color: white;
         font-family: @fontCTA;
         span {
@@ -317,7 +322,7 @@ span.open__hamburger {left: 7.5%;}
 //  Section projects
 #projetos {
     background: @midnight-green-eagle-green;
-    min-height: 40vh;
+    padding: 7rem 0 2rem;
     .container {
         justify-content:center;
         padding: 0 2%;
@@ -329,7 +334,7 @@ span.open__hamburger {left: 7.5%;}
         transform-style: preserve-3d;
         perspective: 500px;
         overflow: hidden;
-        margin-top: 7.5rem;
+        margin-top: 4rem;
         &:hover .projetos__single {
             transform: rotateY(25deg);
         }
@@ -448,11 +453,17 @@ span.open__hamburger {left: 7.5%;}
 }
 // Ende projects
 
+#certified {
+    background: linear-gradient( rgb(109, 1, 185), rgb(55, 1, 87));
+}
+
 //  Section about
 #sobre {
-    background: linear-gradient(45deg, rgb(47, 1, 80), purple);
-    min-height: 40vh;
-    .container {padding:0 2%;}
+    background: linear-gradient(45deg, rgb(47, 1, 80), rgb(128, 0, 128));
+    padding: 6rem 0;
+    .container {
+        padding: 0 2%;
+    }
     .sobre__container {
         margin-top: 5rem;
         max-width: 100%;
@@ -653,6 +664,10 @@ footer {
             }
         }
     }
+
+    #sobre {
+        padding: 12rem 0;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -698,7 +713,6 @@ footer {
     }
 
     #sobre {
-        min-height: auto;
         .sobre__container {
             .sobre__text {width: 100%; text-align: center;}
             .img__wrapper {display: none;}

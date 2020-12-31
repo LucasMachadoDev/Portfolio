@@ -198,3 +198,27 @@ nightMode.addEventListener('click', () => {
     localStorage.removeItem('gmNightMode');
     metaThemeColor.setAttribute('content', '#005f97');
 })
+
+// navLinkFade
+const navSlide = () => {
+    const burger = document.querySelector('[for=menu__hamburger]');
+    const nav = document.querySelector('header');
+    const navLinks = document.querySelectorAll('.menu__sidebar li, .social__medias li');
+
+    burger.addEventListener('click', ()=> {
+        nav.classList.toggle('nav-active');
+
+        navLinks.forEach((link, index)=> {
+            if(link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade .5s ease forwards ${index / 7 + 0.5}s`;
+            }
+        });
+
+        burger.classList.toggle('toggle');
+    })
+
+}
+
+navSlide();

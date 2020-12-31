@@ -60,6 +60,24 @@
 }
 //  End Pré-loader
 
+// Animation menu
+.nav-active {
+    left: 0;
+}
+
+@keyframes navLinkFade{
+    from{
+        transform: translateX(-3rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+// End animation menu
+
 //  animation span cursor
 @keyframes blink {
     0% { opacity: 1;}
