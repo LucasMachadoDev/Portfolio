@@ -64,7 +64,7 @@ $(function() {
     const typedTextSpan = document.querySelector('.typed_text');
     const cursorSpan = document.querySelector('.cursor');
 
-    const textArray = ['Front-End Developer', 'Web designer'];
+    const textArray = ['Front-End Developer', 'Back-End Developer','Web designer'];
     const typingDelay = 100;
     const erasingDelay = 50;
     const newTextDelay = 2000;
