@@ -226,5 +226,4 @@ const navSlide = () => {
     })
 
 }
-
 navSlide();
