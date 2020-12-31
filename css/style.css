@@ -599,6 +599,7 @@ span.open__hamburger {
 #sobre {
   background: linear-gradient(45deg, #2f0150, #800080);
   padding: 6rem 0;
+  margin: .5rem 0;
 }
 #sobre .container {
   padding: 0 2%;
