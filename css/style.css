@@ -335,7 +335,6 @@ label[for=menu__hamburger] span:nth-of-type(3) {
   background: linear-gradient(0deg, #ef476f, #ffd166, #06d6a0, #118ab2, #073b4c);
   width: 100%;
   overflow: hidden;
-  min-height: 90vh;
 }
 #conhecimento .container {
   padding: 0 2%;
@@ -811,6 +810,9 @@ footer .container p {
   }
 }
 @media screen and (max-width: 768px) {
+  #conhecimento {
+    height: 4400px;
+  }
   #projetos .projetos__wrapper .projetos__single .projetos__text div {
     width: 100%;
   }
