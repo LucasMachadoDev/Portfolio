@@ -810,9 +810,6 @@ footer .container p {
   }
 }
 @media screen and (max-width: 768px) {
-  #conhecimento {
-    height: 4400px;
-  }
   #projetos .projetos__wrapper .projetos__single .projetos__text div {
     width: 100%;
   }
