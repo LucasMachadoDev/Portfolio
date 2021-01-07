@@ -810,9 +810,6 @@ footer .container p {
   }
 }
 @media screen and (max-width: 768px) {
-  #projetos {
-    margin: .5rem 0;
-  }
   #projetos .projetos__wrapper .projetos__single .projetos__text div {
     width: 100%;
   }
