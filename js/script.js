@@ -149,12 +149,12 @@ $(window).on('scroll', function() {
         bottom = top + $(this).outerHeight();
 
         if (cur_pos >= top && cur_pos <= bottom) {
-            if (cur_pos <= bottom) {
+            if (cur_pos >= top) {
                 main_nav.find('li').removeClass('active');
             }
             main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
         }
-        if (cur_pos < 300) {
+        if (cur_pos >= 0) {
             $(".nav-menu ul:first li:first").addClass('active');
         }
     });

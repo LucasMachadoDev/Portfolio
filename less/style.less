@@ -199,9 +199,6 @@ label[for=menu__hamburger] {
     background: @gradient-top;
     width: 100%;
     overflow: hidden;
-    .container {
-        padding: 0 2%;
-    }
     .conhecimento__wrapper {
         height: 100%;
         margin-top: 2rem;
@@ -286,12 +283,8 @@ label[for=menu__hamburger] {
 
 //  Section projects
 #projetos {
-    background: @midnight-green-eagle-green;
     padding: 7rem 0;
-    .container {
-        justify-content:center;
-        padding: 0 2%;
-    }
+    .container {justify-content:center;}
     .projetos__wrapper {
         position: relative;
         width: 970px;
@@ -425,12 +418,9 @@ label[for=menu__hamburger] {
 //  Section about
 #sobre {
     background: linear-gradient(45deg, rgb(47, 1, 80), rgb(128, 0, 128));
-    padding: 6rem 0;
-    .container {
-        padding: 0 2%;
-    }
+    padding: 8rem 0;
     .sobre__container {
-        margin-top: 5rem;
+        margin-top: 3rem;
         max-width: 100%;
         display: flex;
         align-items: center;
@@ -456,7 +446,7 @@ label[for=menu__hamburger] {
                 width: 70%;
                 object-fit: cover;
                 border: 5px solid black;
-                border-radius: 2%;
+                border-radius: 50%;
             }
         }
     }
@@ -468,9 +458,9 @@ footer {
     padding: 2rem 0;
     .container {
         padding: 0 2%;
-        justify-content: space-between;
+        justify-content: center;
         p {
-            color: #111;
+            color: #fff;
             font-weight: 600;
         }
     }
@@ -619,7 +609,7 @@ footer {
                     margin-right: 0;
                 }
                 &:hover { 
-                    transform: rotate(0deg) scale(.95);
+                    transform: rotate(0deg) scale(.85);
     
                 }
                 &:hover ~ .projetos__single { transform: rotate(0deg);}
@@ -628,10 +618,6 @@ footer {
                 }
             }
         }
-    }
-
-    #sobre {
-        padding: 10.5rem 0;
     }
 }
 
@@ -670,8 +656,19 @@ footer {
 
     #sobre {
         .sobre__container {
-            .sobre__text {width: 100%; text-align: center;}
-            .img__wrapper {display: none;}
+            flex-direction: column-reverse;
+            .sobre__text {
+                width: 100%; 
+                text-align: center;
+            }
+            .img__wrapper {
+                width: 50%;
+                text-align: center;
+                margin-bottom: 2rem;
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
 }

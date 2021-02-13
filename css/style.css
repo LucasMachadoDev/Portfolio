@@ -45,28 +45,28 @@
   font-style: italic;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v18/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLPrQ.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v19/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4bbLPrQ.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEooCP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEooCP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaooCP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaooCP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoooCP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoooCP.ttf) format('truetype');
 }
 * {
   margin: 0;
@@ -79,7 +79,7 @@
 html,
 body {
   height: 100%;
-  background: #ffd166;
+  background: #073a4b;
 }
 section {
   max-width: 100%;
@@ -109,6 +109,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 2%;
+  margin: 0 auto;
 }
 .w50 {
   width: 50%;
@@ -336,9 +338,6 @@ label[for=menu__hamburger] span:nth-of-type(3) {
   width: 100%;
   overflow: hidden;
 }
-#conhecimento .container {
-  padding: 0 2%;
-}
 #conhecimento .conhecimento__wrapper {
   height: 100%;
   margin-top: 2rem;
@@ -421,12 +420,10 @@ label[for=menu__hamburger] span:nth-of-type(3) {
   object-fit: cover;
 }
 #projetos {
-  background: #073a4b;
   padding: 7rem 0;
 }
 #projetos .container {
   justify-content: center;
-  padding: 0 2%;
 }
 #projetos .projetos__wrapper {
   position: relative;
@@ -556,13 +553,10 @@ label[for=menu__hamburger] span:nth-of-type(3) {
 }
 #sobre {
   background: linear-gradient(45deg, #2f0150, #800080);
-  padding: 6rem 0;
-}
-#sobre .container {
-  padding: 0 2%;
+  padding: 8rem 0;
 }
 #sobre .sobre__container {
-  margin-top: 5rem;
+  margin-top: 3rem;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -590,17 +584,17 @@ label[for=menu__hamburger] span:nth-of-type(3) {
   width: 70%;
   object-fit: cover;
   border: 5px solid black;
-  border-radius: 2%;
+  border-radius: 50%;
 }
 footer {
   padding: 2rem 0;
 }
 footer .container {
   padding: 0 2%;
-  justify-content: space-between;
+  justify-content: center;
 }
 footer .container p {
-  color: #111;
+  color: #fff;
   font-weight: 600;
 }
 .back__to__top {
@@ -762,16 +756,13 @@ footer .container p {
     margin-right: 0;
   }
   #projetos .projetos__wrapper .projetos__single:hover {
-    transform: rotate(0deg) scale(0.95);
+    transform: rotate(0deg) scale(0.85);
   }
   #projetos .projetos__wrapper .projetos__single:hover ~ .projetos__single {
     transform: rotate(0deg);
   }
   #projetos .projetos__wrapper .projetos__single .projetos__text div {
     width: 90%;
-  }
-  #sobre {
-    padding: 10.5rem 0;
   }
 }
 @media screen and (max-width: 960px) {
@@ -801,12 +792,20 @@ footer .container p {
     width: 100%;
     margin: 2rem 0;
   }
+  #sobre .sobre__container {
+    flex-direction: column-reverse;
+  }
   #sobre .sobre__container .sobre__text {
     width: 100%;
     text-align: center;
   }
   #sobre .sobre__container .img__wrapper {
-    display: none;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  #sobre .sobre__container .img__wrapper img {
+    width: 100%;
   }
 }
 @media screen and (max-width: 768px) {
