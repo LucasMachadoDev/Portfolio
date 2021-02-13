@@ -593,7 +593,7 @@ footer .container {
   padding: 0 2%;
   justify-content: center;
 }
-footer .container p {
+footer p {
   color: #fff;
   font-weight: 600;
 }
@@ -811,6 +811,9 @@ footer .container p {
 @media screen and (max-width: 768px) {
   #projetos .projetos__wrapper .projetos__single .projetos__text div {
     width: 100%;
+  }
+  footer p {
+    font-size: .8rem;
   }
 }
 @media screen and (max-width: 410px) {
