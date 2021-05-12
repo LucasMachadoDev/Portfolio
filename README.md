@@ -1,6 +1,6 @@
 # Portfólio
 
-Portfólio oficial. Criado usando JavaScript e Less, esse portfólio foi feito com intuito de praticar os meus conhecimentos e monstrar o que aprendi até o momentos.
+Portfólio oficial. Criado usando JavaScript e Less, esse portfólio foi feito com intuito de praticar os meus conhecimentos e monstrar o que aprendi até o momento. Em breve vou adicionar uma sessão com os meus certificados.
 
 ## Icones
 
