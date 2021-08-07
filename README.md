@@ -6,5 +6,5 @@ Portfólio oficial. Criado usando JavaScript e Less, esse portfólio foi feito c
 
 - :package: nova funcionalidade
 - :up: atualização
-- :beetle: correção de bug
+- :bug: correção de bug
 - :checkered_flag: release
