@@ -1,10 +1,14 @@
-# Portfólio
+# Portfolio
 
-Portfólio oficial. Criado usando JavaScript e Less, esse portfólio foi feito com intuito de praticar os meus conhecimentos e monstrar o que aprendi até o momento.
+My first portfolio
+
+## Tarefas
+
+O controle das tarefas desse projeto será realizado no Github
 
 ## Icones
 
 - :package: nova funcionalidade
 - :up: atualização
-- :bug: correção de bug
+- :beetle: correção de bug
 - :checkered_flag: release

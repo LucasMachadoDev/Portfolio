@@ -3,270 +3,230 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <meta name="description" content="Meu primeiro portfólio">
-        <meta name="keywords" content="portfólio, html, less, css, js, javascript">
-        <meta name="author" content="Lucas G Machado">
-        <meta name="theme-color" content="#073a4b">
-        
-        <!--  FontAwesome  -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
-
-        <!-- My Css -->
-        <link rel="stylesheet" href="css/style.min.css">
-        <link rel="stylesheet" href="css/animations.min.css">
-        
-        <!-- icons -->
+        <link rel="stylesheet" href="sass/dist/style.css">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
         <link rel="manifest" href="site.webmanifest">
-
-        <!-- Social Media -->
-        <meta property="og:title" content="Lucas G.Machado - Portfólio">
-        <meta property="og:description" content="Meu portfólio com alguns dos projetos teste que já fiz e os conhecimentos que adquiri no curso da Danki Code">
-        <meta property="og:url" content="https://lucasfrostywolf.github.io/Portfolio/">
-        <meta property="og:image" content="https://lucasfrostywolf.github.io/Portfolio/img/ash-edmonds-Koxa-GX_5zs-unsplash.jpg">
-
-        <!-- Pré-load -->
-        <link rel="preload" href="css/style.min.css" as="style">
+        <script src="js/jquery.js"></script>
+        <link rel="preload" href="sass/dist/style.css" as="style">
+        <link rel="preload" href="js/script.js" as="script">
         <link rel="preload" href="js/jquery.js" as="script">
-        <link rel="preload" href="js/script.min.js" as="script">
-        <title>Lucas G.Machado - Portfólio</title>
+        <title>Meu Portfólio</title>
     </head>
     <body>
-
         <div class="spinner-wrapper">
-            <div class="loader">
-                <span></span>
-                <span></span>
-            </div> <!-- loader -->
-        </div> <!-- spinner-wrapper -->
-
-        <aside>
-            <div class="container">
-                <input type="checkbox" id="menu__hamburger">
-                <label for="menu__hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-
-                <header>
-                    <div class="header__img__wrapper">
-                        <img src="./img/foto_2.jpg" alt="Auhtor Image">
-                        <p>Lucas G. Machado</p>
-                    </div> <!-- Header__img__wrapper -->
-
-                    <div class="social__medias">
-                        <ul>
-                            <li><a title="LinkedIn" href="https://www.linkedin.com/in/lucas-gabriel-machado-38322289" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a title="GitHub" href="https://github.com/LucasFrostyWolf" target="_blank"><i class="fab fa-github-alt"></i></a></li>
-                            <li><a title="Facebook" href="https://www.facebook.com/lucas.g.machado.56" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+            
+        
+        <header class="header__content" id="home">
+            <div class="container__principal">
+                <div class="header__menu__hamburger">
+                    <div class="header__menu__line" id="line"></div>
+                    <div class="header__menu__line" id="line2"></div>
+                    <div class="header__menu__line" id="line3"></div>
+                </div>
+                <section>
+                    <div class="header__layer"></div>
+                    <div class="header__wraper__img">
+                        <img src="img/bg.jpg" alt="Autor Fotis Fotopoulos">
+                    </div><!-- Header__wraper__img-->
+                    <div class="header__banner">
+                        <h1>Web Developer & Front End Designer</h1>
+                        <p>Lucas Gabriel Machado</p>
+                        <button>Saiba Mais!</button>
+                    </div>
+                </section>
+                <aside class="header__sidebar">
+                    <nav>
+                        <ul class="header__menu__sidebar">
+                            <li class="header__menu__item"><a href="#home" class="header__menu__link">Home</a></li>
+                            <li class="header__menu__item"><a href="#conhecimentos" class="header__menu__link">Conhecimento</a></li>
+                            <li class="header__menu__item"><a href="#projetos" class="header__menu__link">Projetos</a></li>
+                            <li class="header__menu__item"><a href="#contato" class="header__menu__link">Contato</a></li>
                         </ul>
+                    </nav>
+                    <div class="header__social__media">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-github-alt"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </div>
+                </aside>
+            </div> <!-- Container__principal-->
+        </header>
+
+        <section class="sessao__conhecimentos" id="conhecimentos">
+            <div class="container__principal">
+                <div class="sessao__conhecimentos__header">
+                    <h1>Conhecimentos</h1>
+                </div>
+                <div class="sessao__conhecimentos__div">
+                    <div class="sessao__conhecimento__single">
+                        <div class="sessao__conhecimento__header">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML5</h3>
+                        </div>
+                        <div class="sessao__conhecimento__text">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea sapiente modi inventore maiores totam illum incidunt rerum eaque? Id excepturi magni beatae voluptatem voluptatibus vitae, esse nesciunt tempora delectus dolor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sessao__conhecimento__single">
+                        <div class="sessao__conhecimento__header">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS3</h3>
+                        </div>
+                        <div class="sessao__conhecimento__text">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea sapiente modi inventore maiores totam illum incidunt rerum eaque? Id excepturi magni beatae voluptatem voluptatibus vitae, esse nesciunt tempora delectus dolor.</p>
+                        </div>
                     </div>
 
-                    <nav class="menu__sidebar">
-                        <ul>
-                            <li class="active"><a href="#home">Home</a></li>
-                            <li><a href="#conhecimento">Conhecimentos</a></li>
-                            <li><a href="#projetos">Projetos</a></li>
-                            <li><a href="#sobre">Sobre</a></li>
-                        </ul>
-                    </nav> <!-- Menu__sidebar-->
+                    <div class="sessao__conhecimento__single">
+                        <div class="sessao__conhecimento__header">
+                            <i class="fas fa-pencil-alt"></i>
+                            <h3>Design</h3>
+                        </div>
+                        <div class="sessao__conhecimento__text">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea sapiente modi inventore maiores totam illum incidunt rerum eaque? Id excepturi magni beatae voluptatem voluptatibus vitae, esse nesciunt tempora delectus dolor.</p>
+                        </div>
+                    </div>
 
-                    
-                </header> <!-- Header-menu-sidebar -->
-                
-            </div> <!-- Container -->
-        </aside> <!-- Menu__sidebar -->
+                    <div class="sessao__conhecimento__single">
+                        <div class="sessao__conhecimento__header">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="sessao__conhecimento__text">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea sapiente modi inventore maiores totam illum incidunt rerum eaque? Id excepturi magni beatae voluptatem voluptatibus vitae, esse nesciunt tempora delectus dolor.</p>
+                        </div>
+                    </div>
+
+                    <div class="sessao__conhecimento__single">
+                        <div class="sessao__conhecimento__header">
+                            <i class="fab fa-php"></i>
+                            <h3>PHP</h3>
+                        </div>
+                        <div class="sessao__conhecimento__text">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea sapiente modi inventore maiores totam illum incidunt rerum eaque? Id excepturi magni beatae voluptatem voluptatibus vitae, esse nesciunt tempora delectus dolor.</p>
+                        </div>
+                    </div>
+
+                    <div class="sessao__conhecimento__single">
+                        <div class="sessao__conhecimento__header">
+                            <i class="fab fa-github"></i>
+                            <h3>Git e GitHub</h3>
+                        </div>
+                        <div class="sessao__conhecimento__text">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea sapiente modi inventore maiores totam illum incidunt rerum eaque? Id excepturi magni beatae voluptatem voluptatibus vitae, esse nesciunt tempora delectus dolor.</p>
+                        </div>
+                    </div>
+                    <div class="sessao__conhecimentos__img__wraper">
+                        <img src="img/conhecimentos.png" alt="imagem conhecimento">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sessao__projetos" id="projetos">
+            <div class="sessao__projetos__header">
+                <h1>Projetos</h1>
+            </div>
+            <div class="sessao__projetos__card">
+                <div class="projetos__card__single">
+                    <div class="projetos__card__img__wraper">
+                        <img src="img/proj1.jpg" alt="Projeto 1">
+                    </div>
+                    <div class="projetos__card__info">
+                        <h2>ToDo List</h2>
+                        <h3>JavaScript</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium debitis, eos libero nam animi delectus a dolor consequuntur veritatis corporis similique recusandae numquam accusantium corrupti assumenda enim itaque dicta? Accusamus.</p>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+
+                <div class="projetos__card__single">
+                    <div class="projetos__card__img__wraper">
+                        <img src="img/proj2.jpg" alt="Projeto 2">
+                    </div>
+                    <div class="projetos__card__info">
+                        <h2>Maratona</h2>
+                        <h3>HTML, CSS</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta laudantium cupiditate aperiam aut quam quaerat perspiciatis impedit molestias temporibus excepturi corrupti, culpa, odio saepe mollitia architecto deleniti? Voluptates, non? Ipsam?</p>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+
+                <div class="projetos__card__single">
+                    <div class="projetos__card__img__wraper">
+                        <img src="img/proj3.jpg" alt="Projeto 3">
+                    </div>
+                    <div class="projetos__card__info">
+                        <h2>Casa Bela</h2>
+                        <h3>HTML</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique aperiam soluta animi debitis voluptatem perferendis id sit cupiditate accusantium? Vitae similique distinctio autem totam blanditiis impedit, aut at non?</p>
+                        <button>Saiba Mais</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sessao__contato" id="contato">
+            <div class="sessao__contato__wrapper">
+                <div class="sessao__contato__left"></div>
+                <div class="sessao__contato__right">
+                    <h1>Contato</h1>
+                    <form>
+                        <div class="contato__input__group">
+                            <input type="text" class="contato__input__field" id="name">
+                            <label for="name" class="contato__field__label">Nome</label>
+                        </div>
+                        <div class="contato__input__group">
+                            <input type="email" class="contato__input__field" id="email">
+                            <label for="email" class="contato__field__label">E-mail</label>
+                        </div>
+                        <div class="contato__input__group">
+                            <textarea class="contato__input__field" id="mensagem"></textarea>
+                            <label for="mensagem" class="contato__field__label">Mensagem</label>
+                        </div>
+                        <button type="submit" value="Enviar!">Enviar!</button>
+                    </form>
+                </div>
+            </div>
+        </section>
         
-        <section id="home">
-            <div class="container">
-                <div class="text__info">
-                    <h2>Lucas G. Machado</h2>
-                    <p><span class="typed_text"></span><span class="cursor">|</span></p>
-                </div> <!-- Text__info-->
-            
-                <div class="img__info">
-                    <span>Photo by <a target="_blank" href="https://unsplash.com/@badashproducts?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ash Edmonds</a> on <a target="_blank" href="https://unsplash.com/s/photos/code?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-                </div> <!-- Img__info-->
-            </div> <!-- Container -->
-        </section> <!-- #Home -->
-
-        <main>
-            <section id="conhecimento">
-                <div class="container">
-                    <div class="section__header">
-                        <h2>Conhecimentos</h2>
-                    </div>  <!-- Section__header -->
-
-                    <div class="img__wrapper">
-                        <img src="./img/conhecimentos.png" alt="Sessão conhecimento">
-                    </div> <!-- Img__wrapper-->
-
-                    <div class="conhecimento__wrapper">
-
-                        <div class="conhecimento__limiter hidden">
-                            <div class="conhecimento__single">
-                                <div class="conhecimento__header">
-                                    <i class="fab fa-html5"></i>
-                                    <h2>HTML5</h2> 
-                                </div> <!-- Conhecimento__header -->
-                
-                                <div class="conhecimento__text">
-                                    <p>Com as mudanças do HTML5 otimizar sites e sistemas de buscas do Google ficou ainda mais fácil. Disponível em diversas plataformas e com ótima performance em computadores, dispositivos móveis e tablets.</p>
-                                </div> <!-- Conhecimento__text -->
-                            </div> <!-- Conhecimento__single -->
-                        </div> <!-- Conhecimento__limiter -->
-
-                        <div class="conhecimento__limiter hidden2">
-                            <div class="conhecimento__single">
-                                <div class="conhecimento__header">
-                                    <i class="fab fa-less"></i>
-                                    <i class="fab fa-sass"></i>
-                                    <h2>Pré-processadores CSS</h2>
-                                </div> <!-- Conhecimento__header -->
-                
-                                <div class="conhecimento__text">
-                                    <p>Os pré-processadores facilitam a manutenção do código, podendo também serem organizados através de uma importação quando for necessário uma maior flexibilidade e reutilização</p>
-                                </div> <!-- Conhecimento__text -->
-                            </div> <!-- Conhecimento__single -->
-                        </div> <!-- Conhecimento__limiter -->
-
-                        <div class="conhecimento__limiter hidden">
-                            <div class="conhecimento__single">
-                                <div class="conhecimento__header">
-                                    <i class="fab fa-js"></i>
-                                    <h2>JavaScript</h2>
-                                </div> <!-- Conhecimento__header -->
-                
-                                <div class="conhecimento__text">
-                                    <p>Alta compatibilidade com plataformas, sistemas e navegadores de web. Mais leve e rápida do que outras linguagens de programação, tornando as páginas de internet mais dinâmicas e interativas, características essenciais do UX. Com navegadores que interpretam a linguagem por conta própria, tirando a necessidade de usar um compilador.</p>
-                                </div> <!-- Conhecimento__text -->
-                            </div> <!-- Conhecimento__single -->
-                        </div> <!-- Conhecimento__limiter -->
-
-                        <div class="conhecimento__limiter hidden2">
-                            <div class="conhecimento__single">
-                                <div class="conhecimento__header">
-                                    <i class="fab fa-github"></i>
-                                    <h2>Git e GitHub</h2>
-                                </div> <!-- Conhecimento__header -->
-                
-                                <div class="conhecimento__text">
-                                    <p><b>Confiabilidade</b>: com um sistema centralizado evita que os problemas surjam no servidor impedindo o desenvolvimento de todo um trabalho. Um sistema distribuído impede riscos, pois os repositórios dos programadores servem como cópias de backup permitindo que o trabalho de um time não seja interrompido por problemas de servidor.</p><br>
-                                    <p><b>Redução de custos com o servidor</b>: o repositório central funciona como repositório oficial, ao invés de ter uma função de processador central dos pedidos. Assim, a carga de processamento é distribuída pelas máquinas dos programadores.</p>
-                                </div> <!-- Conhecimento__text -->
-                            </div> <!-- Conhecimento__single -->
-                        </div> <!-- Conhecimento__limiter -->
-
-                        <div class="conhecimento__limiter hidden">
-                            <div class="conhecimento__single">
-                                <div class="conhecimento__header">
-                                    <i class="fab fa-php"></i>
-                                    <h2>PHP</h2>
-                                    <p>Atualmente estudando</p>
-                                </div> <!-- Conhecimento__header -->
-                
-                                <div class="conhecimento__text">
-                                    <p><b>É Multiplataforma</b>. É a facilidade que os usuários têm de poder usar e rodar a linguagem PHP numa variedade de sistemas operacionais. Windows, Linux (e suas distribuições) e MacOS são alguns deles. O mesmo acontece entre os navegadores: Chrome, Safari, Edge, Firefox e Opera, entre outros, são todos compatíveis.</p>
-                                    <br>
-                                    <p><b>Alto Desempenho</b>. O PHP é capaz de suportar grandes quantidades de dados. Com isso, a linguagem consegue executar muitas funções e consumir muitos recursos ao mesmo tempo. E sem comprometer o desempenho e a velocidade do servidor em que está hospedado.</p>
-                                </div> <!-- Conhecimento__text -->
-                            </div> <!-- Conhecimento__single -->
-                        </div> <!-- Conhecimento__limiter -->
-
-                        <div class="conhecimento__limiter hidden2">
-                            <div class="conhecimento__single">
-                                <div class="conhecimento__header">
-                                    <i class="fas fa-pen"></i>
-                                    <h2>Design</h2>
-                                </div> <!-- Conhecimento__header -->
-                                
-                                <div class="conhecimento__text">
-                                    <p><b>Super flexibilidade</b>: sites com web design responsivo são fluídos, isto é, seus conteúdos se adaptam livremente a todas as resoluções de tela e todos os dispositivos, tanto os grids quanto as imagens. Assim como um líquido se espalha ou dilui para permitir que o conteúdo caiba num espaço apertado mantendo a aparência, a fluidez do web design responsivo alcança o mesmo resultado com o conteúdo do website em uma tela.</p>
-                                </div> <!-- Conhecimento__text -->
-                            </div> <!-- Conhecimento__single -->
-                        </div> <!-- Conhecimento__limiter -->
-
-                    </div> <!-- Conhecimento__wrapper -->
-                </div> <!-- Container -->
-            </section> <!-- #Conhecimento -->
-
-            <section id="projetos">
-                <div class="container">
-                    <div class="section__header">
-                        <h2>Projetos</h2>
-                    </div> <!-- Section__header -->
-                    
-                    <div class="projetos__wrapper">
-                        <div class="projetos__single">
-                            <div class="projetos__img__wrapper">
-                                <img src="./img/portfolio_v1.png" alt="Primeira versão do portfólio">
-                            </div> <!-- Projetos__img__wrapper -->
-
-                            <div class="projetos__text">
-                                <div>
-                                    <h2>Portfólio primera versão</h2>
-                                    <p>Versão teste usando JavaScript.</p>
-                                </div>
-                            </div> <!-- Projetos__text -->
-                        </div> <!--Projetos__single -->
-
-                        <div class="projetos__single">
-                            <div class="projetos__img__wrapper">
-                                <img src="./img/Projeto_happy.png" alt="Projeto Happy">
-                            </div> <!-- Projetos__img__wrapper -->
-
-                            <div class="projetos__text">
-                                <div>
-                                    <h2>Projeto Happy</h2>
-                                    <p>Projeto feito na semana NLW(Next Level Week) da Rocketseat. Foi utilizado Sass, JavaScript, NodeJS com Sqlite e Handlebars.
-                                        <a href="https://github.com/LucasFrostyWolf/NLW-3" target="_blank">Repositório</a>
-                                    </p>
-                                    
-                                </div>
-                            </div> <!-- Projetos__text -->
-                        </div> <!--Projetos__single -->
-                    </div> <!-- Projetos__wrapper -->
-                </div> <!-- Container -->
-            </section> <!-- #Projetos -->
-
-            <section id="sobre">
-                <div class="container">
-                    <div class="section__header">
-                        <h2>Sobre Mim</h2>
-                    </div> <!-- Section__header-->
-
-                    <div class="sobre__container">
-                        <div class="sobre__text">
-                            <h2>Lucas Gabriel Machado</h2>
-                            <p>Brasileiro, 24 anos, apaixonado por tecnologia. Estudo programação devido a extrema curiosidade sobre a maneira em que os websites são feitos.  Front-End Danki Code e Back-End com PHP.</p>
-                        </div>
-
-                        <div class="img__wrapper">
-                            <img src="./img/foto_2.jpg" alt="Foto sobre">
-                        </div>
-                    </div> <!-- Sobre__container-->
-                </div> <!-- Container -->
-            </section> <!-- #Sobre -->
-        </main>
-
         <footer>
-            <div class="container">
-                <p>&copy; Todos os direitos reservados - Desenvolvido por Lucas G. Machado</p>
+            <div class="footer__content">
+                <p>Copyright &copy; 2020, ESTECIA DS - Todos os direitos reservados</p>
+                <div class="social__list__footer">
+                    <ul>
+                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </footer>
-        
-        <a href="#" class="back__to__top"><i class="fa fa-arrow-up"></i></a>
-        <div class="switch__container">
-            <input type="checkbox" id="night-mode" class="switch__shadow switch " aria-label="night-mode" />
-            <label class="switch__button" for="night-mode"></label>
-        </div> <!-- Switch__container -->
 
-        <script src="./js/jquery.js"></script>
-        <script src="./js/jquery.easing.min.js"></script>
-        <script src="./js/script.min.js"></script>
+        <a href="#home" id="link-topo">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        <script>
+            $(document).ready(function() {
+            //Preloader
+            preloaderFadeOutTime = 4000;
+            function hidePreloader() {
+            var preloader = $('.spinner-wrapper');
+            preloader.fadeOut(preloaderFadeOutTime);
+            }
+            hidePreloader();
+            });
+        </script>
     </body>
-</html> 
+    <script src="js/script.js"></script>
+</html>

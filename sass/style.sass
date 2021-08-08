@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css')
+@import 'reset'
+
+.spinner-wrapper 
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #47daff
+    z-index: 999999
+
+.sk-folding-cube 
+    margin: 20px auto
+    width: 40px
+    height: 40px
+    top: 50%
+    z-index: 8
+    position: relative
+    transform: rotateZ(45deg)
+
+
+.sk-folding-cube .sk-cube 
+    float: left
+    width: 50%
+    height: 50%
+    position: relative
+    transform: scale(1.1) 
+
+.sk-folding-cube .sk-cube:before 
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #333
+    animation: sk-foldCubeAngle 2.4s infinite linear both
+    transform-origin: 100% 100%
+
+.sk-folding-cube .sk-cube2 
+    transform: scale(1.1) rotateZ(90deg)
+
+.sk-folding-cube .sk-cube3 
+    transform: scale(1.1) rotateZ(180deg)
+
+.sk-folding-cube .sk-cube4 
+    transform: scale(1.1) rotateZ(270deg)
+
+.sk-folding-cube .sk-cube2:before 
+    animation-delay: 0.3s
+
+.sk-folding-cube .sk-cube3:before 
+    animation-delay: 0.6s 
+
+.sk-folding-cube .sk-cube4:before 
+    animation-delay: 0.9s
+
+@keyframes sk-foldCubeAngle 
+    0%, 10% 
+        transform: perspective(140px) rotateX(-180deg)
+        opacity: 0 
+    25%, 75% 
+        transform: perspective(140px) rotateX(0deg)
+        opacity: 1 
+    90%, 100% 
+        transform: perspective(140px) rotateY(180deg)
+        opacity: 0 
+    
+
+
+//  Header
+header.header__content
+    width: 100%
+    position: relative
+
+header.header__content section
+    width: 100%
+    height: 100vh
+    overflow: hidden
+    position: relative
+    z-index: 1
+
+.header__layer
+    position: absolute
+    z-index: 2
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(201, 201, 201, .2)
+
+.header__wraper__img
+    width: 100%
+    height: 100%
+    img
+        width: 100%
+        height: 100vh
+        -o-object-fit: cover
+        object-fit: cover
+        animation: zoom 25s 
+
+.header__banner
+    position: absolute
+    z-index: 3
+    left: 15%
+    top: 40%
+    h1
+        font-size: 3.5em
+        font-family: $fontprimary
+        font-weight: 200
+        text-shadow: .9rem 1.4rem 2px rgba(0, 0, 0, .7)
+        line-height: 1.6em
+        margin-bottom: 10px
+        animation: moveBanner 1s .5s forwards
+        opacity: 0
+    p
+        font-size: 2em
+        font-family: $fontsecundary
+        text-shadow: 1rem 1.3rem rgba(0, 0, 0, 1)
+        animation: moveBanner 1s .7s forwards
+        opacity: 0
+        line-height: 2em
+
+.header__banner button
+    font-family: $fontaction
+    text-transform: uppercase
+    margin-top: 20px
+    padding: 10px 20px
+    width: 30%
+    border: 0
+    opacity: 0
+    animation: moveBanner 1s .9s forwards
+
+.header__menu__hamburger
+    width: 3rem
+    height: 3rem
+    position: fixed
+    z-index: 5
+    right: 2rem
+    top: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    transition-duration: .6s
+    transition-delay: .1s
+    cursor: pointer
+    .header__menu__line
+        width: 100%
+        height: .2rem
+        background-color: white
+        box-shadow: .2rem .3rem 1px black
+        transition: transform 1s
+    span
+        position: absolute
+        background-color: #3c1053
+        top: -.4rem
+        left: 4rem
+        height: 2rem
+        width: 6rem
+        display: flex
+        justify-content: center
+        align-items: center
+        font-family: $fontaction
+        opacity: 0
+        &::before
+            content: ''
+            position: absolute
+            border-right:.5rem solid #3c1053
+            border-left:.5rem solid transparent
+            border-top:.5rem solid transparent
+            border-bottom:.5rem solid transparent
+            left: -1rem
+
+.header__menu__show .header__menu__line
+    box-shadow: none
+
+.header__menu__show #line2
+    opacity: 0
+    visibility: hidden
+
+.header__menu__show #line
+    transform: rotate(45deg)
+    color: black
+    background-color: black
+
+.header__menu__show #line3
+    transform: rotate(135deg)
+    position: relative
+    top: -25px
+    left: 1px
+    color: black
+    background-color: black
+
+.header__menu__show .header__menu__hamburger:hover span
+    opacity: 1
+
+.header__sidebar
+    position: fixed
+    z-index: 4
+    width: 20rem
+    height: 100vh
+    background-color: #ffffff
+    top: 0
+    right: -20rem
+    transition: 1s
+    .header__menu__sidebar
+        position: absolute
+        top: 40%
+        left: 50%
+        transform: translate(-50%, -50%)
+        .header__menu__item
+            text-align: center
+            margin-bottom: 1em
+            a.header__menu__link 
+                color: #555
+                font-family: $fontaction
+                transition: 1s
+                font-size: 1.8em
+                &:hover
+                    text-decoration: underline
+                    color: #a600ff
+
+.header__menu__show .header__sidebar
+    right: 0
+
+.header__menu__show .header__menu__hamburger
+    right: 15rem
+
+.header__social__media
+    position: absolute
+    bottom: 25%
+    width: 100%
+    display: flex
+    justify-content: space-evenly
+    i
+        background-color: #410363
+        color: #ffffff
+        font-size: 2.5rem
+        height: 3.5rem
+        width: 3.5rem
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        transition: 1s
+        &:hover
+            background-color: #a407f8
+
+@keyframes zoom
+    0%
+        transform: scale(1.2)
+    100%
+        transform: scale(1)
+
+@keyframes moveBanner
+    0%
+        transform: translateY(10rem) rotateY(-30deg)
+    100%
+        transform: translateY(0) rotateY(0)
+        opacity: 1
+
+//  Sessao__conhecimentos
+.sessao__conhecimentos
+    padding: 3rem
+
+.sessao__conhecimentos__div
+    height: 100%
+    display: grid
+    grid-template-columns: repeat(20, 1fr)
+    grid-template-rows: repeat(6, 6rem)
+    row-gap: 3rem
+
+.sessao__conhecimento__single:nth-child(1)
+    grid-column: 4 / 10
+    grid-row: 1 / 5
+
+.sessao__conhecimento__single:nth-child(2) 
+    grid-column: 3 / 8
+    grid-row: 3 / 5
+
+.sessao__conhecimento__single:nth-child(3) 
+    grid-column: 4 / 11
+    grid-row: 5 / -1
+
+.sessao__conhecimento__single:nth-child(4) 
+    grid-column: 13 / 20
+    grid-row: 1 / 3
+
+.sessao__conhecimento__single:nth-child(5) 
+    grid-column: 20 / 15
+    grid-row: 3 / 5
+
+.sessao__conhecimento__single:nth-child(6) 
+    grid-column: 13 / 20
+    grid-row: 5 / -1
+
+.sessao__conhecimentos__header,
+.sessao__projetos__header
+    display: flex
+    justify-content: center
+    align-content: center
+    h1
+        font-size: 3rem
+        color: rgb(248, 91, 151)
+        border-bottom: 3px solid white
+        margin-bottom: 2.5rem
+
+.sessao__conhecimento__header
+    display: flex
+    align-items: center
+    i
+        font-size: 2.5rem
+        color: rgb(255, 136, 0)
+    h3
+        font-family: $fontprimary
+        font-weight: 400
+        font-size: 2rem
+        padding-left: 1.2em 
+        color: rgb(255, 136, 0)
+
+.sessao__conhecimento__text
+    font-family: $fontsecundary
+    margin-top: 1rem
+    color: rgb(134, 252, 0)
+    font-weight: 600
+
+.sessao__conhecimentos__img__wraper
+    grid-column: 8 / 15
+    grid-row: 2 / 6
+    width: 100%
+    img
+        object-fit: cover
+        width: 100%
+
+//  Sessao Projetos
+.sessao__projetos
+    background-color: #8700c5
+    padding: 2em
+
+.sessao__projetos__card
+    display: flex
+    justify-content: space-evenly
+    padding-bottom: 3rem
+
+.projetos__card__single
+    width: 18rem
+    height: 28rem
+    position: relative
+    &:hover > .projetos__card__img__wraper img
+        opacity: .5
+    .projetos__card__img__wraper
+        height: 100%
+        width: 100%
+        border-radius: .5rem
+        background-color: #000000
+        img
+            object-fit: cover
+            width: 100%
+            height: 100%
+            opacity: .8
+            transition: opacity .5s
+            border-radius: .5rem
+
+            
+    .projetos__card__info
+        position: absolute
+        bottom: 0
+        padding: 2rem
+        text-shadow: .5rem .2rem .4rem black
+        opacity: 0
+        transition: all .5s
+        &:hover
+            bottom: 2rem
+            opacity: 1
+        h2
+            font-family: $fontprimary
+            font-size: 2rem
+            font-weight: 500
+            color: #ff7b00
+        h3
+            font-family: $fontaction
+            font-weight: bolder
+            color: #a801f5
+            margin-bottom: 1.5rem
+        p
+            font-family: $fontsecundary
+            width: 80%
+            color: #ff7b00
+            margin-bottom: 2rem 
+            font-weight: bolder
+        button
+            width: 10rem
+            height: 2.5rem
+            font-size: 1rem
+            border-radius: .5rem
+            box-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .4)
+            letter-spacing: .1rem
+
+//  Sessao contato
+.sessao__contato
+    width: 100%
+    height: 100vh
+    background-color: #272727
+    display: flex
+    justify-content: center
+    align-items: center
+
+.sessao__contato__wrapper
+    width: 60%
+    height: 30rem
+    display: flex
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5)
+    .sessao__contato__left
+        width: 35%
+        background: linear-gradient(rgba(15, 15, 15, .6),rgba(22, 22, 22, .9)), url('../../img/contato.jpg')
+        background-size: cover
+    .sessao__contato__right
+        width: 65%
+        background-color: #eee
+        padding: 1rem 3rem 3rem 3rem
+        h1
+            width: 100%
+            text-align: center
+            font-family: $fontprimary
+            color: #272727
+            font-size: 3rem
+            font-weight: lighter
+        form
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            button
+                font-size: 1.2rem
+            .contato__input__group
+                position: relative
+                textarea
+                    padding-top: 1rem
+                    overflow: vertical
+                    max-width: 30rem
+                    max-height: 8rem
+                .contato__input__field
+                    background-color: transparent
+                    border: 0
+                    width: 25rem
+                    height: 2rem
+                    font-size: 1.5rem
+                    font-family: $fontsecundary
+                    border-bottom: 2px dashed black
+                    margin: 1.5rem 0
+                    padding-left: .5rem
+                    &:focus
+                        outline: 0
+                        border-bottom: 1px solid
+                    &:focus ~ label
+                        top: 0
+                .contato__field__label
+                    position: absolute
+                    left: 0
+                    top: 2rem
+                    color: black
+                    font-family: $fontsecundary
+                    font-size: 1.2rem
+                    text-transform: uppercase
+                    transition: .5s
+
+//  sessao orçamento
+.sessao__orcamento
+    width: 100%
+    height: 100vh
+    background: url('../../img/bg-orcamento.jpg')
+    object-fit: cover
+    display: flex
+    justify-content: center
+    align-items: center
+    .orcamento__wrapper
+        width: 60%
+        height: 80%
+        background-color: #ffffff85
+        border-radius: 10px
+        box-shadow: 1rem .1rem .3rem black
+        position: relative
+        h1
+            position: absolute
+            top: -2.5rem
+            left: 2rem
+            padding: 0 3rem
+            font-family: $fontprimary
+            font-size: 3rem
+            font-weight: 300
+            box-shadow: .2rem .2rem .3rem black
+            border-radius: 10px
+            background: #ad5389
+            background: -webkit-linear-gradient(to right, #3c1053, #ad5389)
+            background: linear-gradient(to right, #3c1053, #ad5389)
+        form
+            margin: 4rem
+            display: grid
+            grid-template-columns: auto 1fr
+            column-gap: 2rem
+            row-gap: 2rem
+            label
+                font-family: $fontsecundary
+                font-size: 1.5rem
+                font-weight: 700
+            input[type=number]
+                font-family: $fontsecundary
+                width: 4rem
+                font-size: 2rem
+                border-radius: 10px
+                padding-left: .3rem
+                border: 0
+                &:focus
+                    outline: 0
+            button
+                width: 20rem
+                padding: 1rem
+                grid-column: 2
+
+//  Footer
+footer 
+    width: 100%
+    height: 7rem
+    display: flex
+    align-items: center
+    justify-content: center
+    .footer__content
+        width: 60%
+        display: flex
+        justify-content: space-between
+        p
+            font-family: $fontsecundary
+            font-size: 1.2rem
+        .social__list__footer ul
+                display: flex
+                a
+                    margin: 0 2rem
+                    color: rgb(255, 255, 255)
+                    font-size: 1.8rem
+
+#link-topo
+    position: fixed
+    display: flex
+    justify-content: center
+    align-items: center
+    right: 3rem
+    bottom: 3rem
+    width: 3rem
+    height: 3rem
+    color: white
+    background: #ad5389
+    background: -webkit-linear-gradient(to right, #3c1053, #ad5389)
+    background: linear-gradient(to right, #3c1053, #ad5389)
+    border-radius: 50%
+    box-shadow: 0 0 1rem .3rem black
