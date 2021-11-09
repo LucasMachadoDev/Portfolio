@@ -1,229 +1,223 @@
-$(function() {
-    $(document).ready(function() {
-        //Preloader
-        preloaderFadeOutTime = 4000;
-        function hidePreloader() {
-        var preloader = $('.spinner-wrapper');
-        preloader.fadeOut(preloaderFadeOutTime);
-        }
-        hidePreloader();
-        });
-});
+/*================= MENU SHOW Y HIDDEN =======================*/
+const navMenu = document.getElementById('nav-menu'),
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close');
 
-$('.menu__sidebar li a').click(function() {
-    $('[for=menu__hamburger]').trigger('click'); 
-});
+/*======= MENU SHOW =======*/
+/* Validate if constant exists */
+if(navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.add('show-menu');
+    })
+}
 
-(function () {
-    var elements;
-    var elements_2;
-    var windowHeight;
+/*========= MENU HIDDEN ==============*/
+/* Validate if constant exists */
+if(navClose) {
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu');
+    })
+}
 
-    function init() {
-        elements = document.querySelectorAll('.hidden');
-        elements_2 = document.querySelectorAll('.hidden2');
-        windowHeight = window.innerHeight;
-    }
+/*================= REMOVE MENU MOBILE ====================*/
+const navLink = document.querySelectorAll('.nav__link');
 
-    function checkPosition() {
-        for(let i = 0; i <elements.length; i++) {
-            let element = elements[i];
-            let positionFromTop = elements[i].getBoundingClientRect().top;
+function linkAction() {
+    navMenu.classList.remove('show-menu');
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));
 
-            if(positionFromTop - windowHeight <= 0) {
-                element.classList.add('slide_left');
-                element.classList.remove('hidden')
-            } else {
-                element.classList.remove('slide_left');
-                element.classList.add('hidden')
+
+/*================== SKILLS PERCENTAGE ===================*/
+const skills = {
+    frontendSkill: {
+        html: 70,
+        css: 50,
+        js: 20,
+    },
+    backendSkills: {
+        php: 20,
+        node: 5,
+        mysql: 20,
+    },
+    designSkills: {
+        figma: 10,
+    },
+};
+
+for (const key in skills) {
+    if (Object.hasOwnProperty.call(skills, key)) {
+        const element = skills[key];
+
+        for (const [key, value] of Object.entries(element)) {
+            const skillContainer = document.getElementsByClassName(`skills__${key}`);
+
+            if (skillContainer.length) {
+                skillContainer[0].style.width = `${value}%`;
             }
         }
-
-        for(let n = 0; n < elements_2.length; n++) {
-            let element = elements_2[n];
-            let positionFromTop = elements_2[n].getBoundingClientRect().top;
-
-            if(positionFromTop - windowHeight <= 0) {
-                element.classList.add('slide_right');
-                element.classList.remove('hidden2')
-            } else {
-                element.classList.remove('slide_right');
-                element.classList.add('hidden2')
-            }
-        }
-    }
-
-    window.addEventListener('scroll', checkPosition);
-    window.addEventListener('resize', init);
-
-    init();
-    checkPosition();
-})();
-
-//  Typing vars and functions
-const typedTextSpan = document.querySelector('.typed_text');
-const cursorSpan = document.querySelector('.cursor');
-
-const textArray = ['Front-End Developer', 'Back-End Developer','Web designer'];
-const typingDelay = 100;
-const erasingDelay = 50;
-const newTextDelay = 2000;
-let textArrayIndex = 0;
-let charIndex = 0;
-
-function type() {
-    if(charIndex < textArray[textArrayIndex].length) {
-        if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-    } else {
-        cursorSpan.classList.remove('typing');
-        setTimeout(erase, newTextDelay);
     }
 }
 
-function erase() {
-    if(charIndex > 0) {
-        if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    } else {
-        cursorSpan.classList.remove('typing');
-        textArrayIndex++;
-        if(textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
+/*======================== ACCORDION SKILLS =========================*/
+const skillsContent = document.getElementsByClassName('skills__content'),
+    skillsHeader = document.querySelectorAll('.skills__header');
+
+function toggleSkills() {
+    let itemClass = this.parentNode.className;
+
+    for(i = 0; i < skillsContent.length; i++) {
+        skillsContent[i].className = 'skills__content skills__close';
+    };
+
+    if(itemClass === 'skills__content skills__close') {
+        this.parentNode.className = 'skills__content skills__open';
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    if(textArray.length) setTimeout(type, newTextDelay + 250);
-});
-
-// Smooth scroll for the navigation menu and links with .scrollto classes
-$(document).on('click', '.menu__sidebar a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        e.preventDefault();
-        var target = $(this.hash);
-        if (target.length) {
-
-            var scrollto = target.offset().top;
-
-            $('html, body').animate({
-                scrollTop: scrollto
-            }, 1500, 'easeInOutExpo');
-
-            if ($(this).parents('.menu__sidebar').length) {
-                $('.nav-menu .active').removeClass('active');
-                $(this).closest('li').addClass('active');
-            }
-            
-        }
-    }
-});
-
-// Activate smooth scroll on page load with hash links in the url
-$(document).ready(function() {
-    if (window.location.hash) {
-        var initial_nav = window.location.hash;
-        if ($(initial_nav).length) {
-            var scrollto = $(initial_nav).offset().top;
-            $('html, body').animate({
-            scrollTop: scrollto
-            }, 1500, 'easeInOutExpo');
-        }
-    }
-});
-
-// Navigation active state on scroll
-var nav_sections = $('section');
-var main_nav = $('.menu__sidebar');
-
-$(window).on('scroll', function() {
-    var cur_pos = $(this).scrollTop();
-
-    nav_sections.each(function() {
-        var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
-
-        if (cur_pos >= top && cur_pos <= bottom) {
-            if (cur_pos >= top) {
-                main_nav.find('li').removeClass('active');
-            }
-            main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
-        }
-        if (cur_pos >= 0) {
-            $(".nav-menu ul:first li:first").addClass('active');
-        }
-    });
-});
-
-// back to top button
-$(window).scroll(function () {
-    if($(this).scrollTop() > 100) 
-        $('.back__to__top').fadeIn('slow');
-    else
-        $('.back__to__top').fadeOut('slow');
-});
-
-$('.back__to__top').click(function() {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-});
-
-//  Dark mode
-const nightModeStorege = localStorage.getItem('gmNightMode');
-const nightMode = document.querySelector('#night-mode');
-const metaThemeColor = document.querySelector('meta[name=theme-color]');
-
-if(nightModeStorege) {
-    document.documentElement.classList.add('night-mode');
-    metaThemeColor.setAttribute('content', '#2b2b2b');
-
-    nightMode.checked = true;
-}
-
-nightMode.addEventListener('click', () => {
-    document.documentElement.classList.toggle('night-mode')
-
-    if(document.documentElement.classList.contains('night-mode')) {
-        localStorage.setItem('gmNightMode', true);
-        metaThemeColor.setAttribute('content', '#2b2b2b');
-        return;
-    }
-    localStorage.removeItem('gmNightMode');
-    metaThemeColor.setAttribute('content', '#005f97');
+skillsHeader.forEach((el) => {
+    el.addEventListener('click', toggleSkills);
 })
 
-// navLinkFade
-const navSlide = () => {
-    const burger = document.querySelector('[for=menu__hamburger]');
-    const nav = document.querySelector('.menu__sidebar ul, .social__medias ul');
-    const navLinks = document.querySelectorAll('.menu__sidebar li, .social__medias li');
+/*====================== QUALIFICATION TABS =====================*/
+const tabs = document.querySelectorAll('[data-target]'),
+    tabContents = document.querySelectorAll('[data-content]');
 
-    burger.addEventListener('click', ()=> {
-        // nav.classList.toggle('nav-active');
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target);
 
-        if(nav.classList == ''){
-            nav.classList.add('nav-active');
-        } else {
-            nav.classList.remove('nav-active');
-        }
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('qualification__active');
+        })
+        target.classList.add('qualification__active');
 
-        navLinks.forEach((link, index)=> {
-            if(link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade .5s ease forwards ${index / 7 + 0.5}s`;
-            }
-        });
-
-        burger.classList.toggle('toggle');
+        tabs.forEach(tab => {
+            tab.classList.remove('qualification__active');
+        })
+        tab.classList.add('qualification__active');
     })
+})
 
+/*======================= SERVICES MODAL =========================*/
+const modalViews = document.querySelectorAll('.services__modal'),
+    modalBtns = document.querySelectorAll('.services__button'),
+    modalCloses = document.querySelectorAll('.services__modal-close');
+
+let modal = function(modalClick) {
+    modalViews[modalClick].classList.add('active-modal');
 }
-navSlide();
+
+modalBtns.forEach((modalBtn, i) => {
+    modalBtn.addEventListener('click', () => {
+        modal(i);
+    })
+})
+
+modalCloses.forEach((modalClose) => {
+    modalClose.addEventListener('click', () => {
+        modalViews.forEach((modalView) => {
+            modalView.classList.remove('active-modal');
+        })
+    })
+})
+
+/*===================== PORTFOLIO SWIPER ======================*/
+let swiperPortfolio = new Swiper('.portfolio__container', {
+    cssMode: true,
+    loop:true,
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+/*========================== TESTIMONIAL SWIPER ========================*/
+let swiperTestimonial = new Swiper('.testimonial__container', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 48,
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+    },
+
+    breakpoints: {
+        568: {
+            slidesPerView: 2,
+        }
+    },
+});
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*====================== CHANGE BACKGROUND HEADER ========================*/
+function scrollHeader(){
+    const nav = document.getElementById('header')
+    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+    if(this.scrollY >= 200) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+
+/*==================== SHOW SCROLL TOP ====================*/ 
+function scrollUp(){
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*==================== DARK LIGHT THEME ====================*/ 
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'uil-sun'
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// We obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+
+// We validate if the user previously chose a topic
+if (selectedTheme) {
+  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener('click', () => {
+    // Add or remove the dark / icon theme
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    // We save the theme and the current icon that the user chose
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
