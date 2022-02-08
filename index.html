@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html lang="pt-br">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Portfólio - Lucas G. Machado</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta name="description" content="Meu primeiro portfólio">
         <meta name="keywords" content="portfólio, html, less, css, js, javascript">
         <meta name="author" content="Lucas G Machado">
+        <meta name="theme-color" content="#073a4b">
+        
+        <!--  FontAwesome  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+
+        <!-- My Css -->
+        <link rel="stylesheet" href="css/style.min.css">
+        <link rel="stylesheet" href="css/animations.min.css">
+        
         <!-- icons -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -19,479 +23,250 @@
         <link rel="manifest" href="site.webmanifest">
 
         <!-- Social Media -->
-        <meta property="og:title" content="Portfólio - Lucas G. Machado">
+        <meta property="og:title" content="Lucas G.Machado - Portfólio">
         <meta property="og:description" content="Meu portfólio com alguns dos projetos teste que já fiz e os conhecimentos que adquiri no curso da Danki Code">
-        <meta property="og:url" content="https://LucasMachadoDev.github.io/Portfolio/">
-        <meta property="og:image" content="https://LucasMachadoDev.github.io/Portfolio/img/luca-bravo-XJXWbfSo2f0-unsplash.jpg">
-        <!--==================== UNICONS =========================-->
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-        <!--==================== SWIPER CSS =====================-->
-        <link rel="stylesheet" href="./css/swiper-bundle.min.css">
-        <!--=============== CSS ======================-->
-        <link rel="stylesheet" href="./css/style.css">
+        <meta property="og:url" content="https://lucasfrostywolf.github.io/Portfolio/">
+        <meta property="og:image" content="https://lucasfrostywolf.github.io/Portfolio/img/ash-edmonds-Koxa-GX_5zs-unsplash.jpg">
+
+        <!-- Pré-load -->
+        <link rel="preload" href="css/style.min.css" as="style">
+        <link rel="preload" href="js/jquery.js" as="script">
+        <link rel="preload" href="js/script.min.js" as="script">
+        <title>Lucas G.Machado - Portfólio</title>
     </head>
     <body>
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="./" class="nav__logo">Lucas G. Machado</a>
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list grid">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link"><i class="uil uil-estate nav__icon"></i> Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link"><i class="uil uil-user-circle nav__icon"></i> Sobre</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link"><i class="uil uil-file-alt nav__icon"></i> Skills</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link"><i class="uil uil-briefcase-alt nav__icon"></i> Serviços</a></li>
-                        <li class="nav__item"><a href="#portfolio" class="nav__link"><i class="uil uil-scenery nav__icon"></i> Portfólio</a></li>
-                    </ul> <!-- Nav__list -->
-                    <i class="uil uil-times nav__close" id="nav-close"></i>
-                </div> <!-- Nav__menu -->
 
-                <div class="nav__btns">
-                    <!-- Theme change button -->
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="uil uil-apps"></i>
+        <div class="spinner-wrapper">
+            <div class="loader">
+                <span></span>
+                <span></span>
+            </div> <!-- loader -->
+        </div> <!-- spinner-wrapper -->
+
+        <aside>
+            <div class="container">
+                <input type="checkbox" id="menu__hamburger">
+                <label for="menu__hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <header>
+                    <div class="header__img__wrapper">
+                        <img src="./img/foto_2.jpg" alt="Auhtor Image">
+                        <p>Lucas G. Machado</p>
+                    </div> <!-- Header__img__wrapper -->
+
+                    <div class="social__medias">
+                        <ul>
+                            <li><a title="LinkedIn" href="https://www.linkedin.com/in/lucas-gabriel-machado-38322289" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a title="GitHub" href="https://github.com/LucasFrostyWolf" target="_blank"><i class="fab fa-github-alt"></i></a></li>
+                            <li><a title="Facebook" href="https://www.facebook.com/lucas.g.machado.56" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                        </ul>
                     </div>
-                </div>
-            </nav> <!-- Nav Container -->
-        </header> <!-- Header -->
 
-        <main class="main">
-            <section class="home section" id="home">
-                <div class="home__container container grid">
-                    <div class="home__content grid">
-                        <div class="home__social">
-                            <a href="linkedin.com/in/lucas-gabriel-machado-38322289" target="_blank" class="home__social-icon" title="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                            <a href="" target="_blank" class="home__social-icon"></a>
-                            <a href="https://github.com/LucasFrostyWolf" target="_blank" class="home__social-icon" title="GitHub"><i class="uil uil-github-alt"></i></a>
-                        </div> <!-- Home__social -->
-                        <div class="home__img">
-                            <img src="./img/luca-bravo-XJXWbfSo2f0-unsplash.jpg" alt="Imagem da Home">
-                        </div> <!-- Home__img -->
-                        <div class="home__data">
-                            <h1 class="home__title">Olá, Eu sou Lucas</h1>
-                            <h3 class="home__subtitle">Full-stack developer</h3>
-                            <p class="home__description">Iniciante em web design e programção</p>
-                        </div> <!-- Home__data -->
-                    </div> <!-- Home__content -->
-                    <div class="home__scroll">
-                        <a href="#about" class="home__scroll-button button--flex">
-                            <i class="uil uil-mouse-alt home__scroll-mouse"></i> 
-                            <span class="home__scroll-name"> Scroll down</span>
-                            <i class="uil uil-arrow-down home__scroll-arrow"></i>
-                        </a>
-                    </div> <!-- Home__scroll -->
-                </div> <!-- Home__container -->
-            </section> <!-- Home -->
+                    <nav class="menu__sidebar">
+                        <ul>
+                            <li class="active"><a href="#home">Home</a></li>
+                            <li><a href="#conhecimento">Conhecimentos</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                        </ul>
+                    </nav> <!-- Menu__sidebar-->
 
-            <section class="about section" id="about">
-                <h2 class="section__title">Sobre Mim</h2>
-                <span class="section__subtitle">Introdução</span>
+                    
+                </header> <!-- Header-menu-sidebar -->
+                
+            </div> <!-- Container -->
+        </aside> <!-- Menu__sidebar -->
+        
+        <section id="home">
+            <div class="container">
+                <div class="text__info">
+                    <h2>Lucas G. Machado</h2>
+                    <p><span class="typed_text"></span><span class="cursor">|</span></p>
+                </div> <!-- Text__info-->
+            
+                <div class="img__info">
+                    <span>Photo by <a target="_blank" href="https://unsplash.com/@badashproducts?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ash Edmonds</a> on <a target="_blank" href="https://unsplash.com/s/photos/code?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+                </div> <!-- Img__info-->
+            </div> <!-- Container -->
+        </section> <!-- #Home -->
 
-                <div class="about__container container grid">
-                    <img class="about__img" src="./img/foto_2.jpg" alt="">
+        <main>
+            <section id="conhecimento">
+                <div class="container">
+                    <div class="section__header">
+                        <h2>Conhecimentos</h2>
+                    </div>  <!-- Section__header -->
 
-                    <div class="about__data">
-                        <p class="about__description">Brasileiro, 24 anos, apaixonado por tecnologia. Estudo programação devido a extrema curiosidade sobre a maneira em que os sistemas e websites são feitos. Sou Web developer, iniciante na área e com muita vontade de aprender e estudar novas coisas.</p>
+                    <div class="img__wrapper">
+                        <img src="./img/conhecimentos.png" alt="Sessão conhecimento">
+                    </div> <!-- Img__wrapper-->
 
-                        <div class="about__info">
-                            <div>
-                                <span class="about__info-title">00</span>
-                                <span class="about__info-name">Anos <br> de experiencia</span>
-                            </div>
-                            <div>
-                                <span class="about__info-title">04</span>
-                                <span class="about__info-name">Projetos <br> completos</span>
-                            </div>
-                            <div>
-                                <span class="about__info-title">00</span>
-                                <span class="about__info-name">Companias <br> em que trabalhei</span>
-                            </div>
-                        </div> <!-- About__info -->
+                    <div class="conhecimento__wrapper">
 
-                        <div class="about__button">
-                            <a download="./pdf/Lucas_Machado.pdf" href="./pdf/Lucas_Machado.pdf" class="button button--flex">Download CV <i class="uil uil-file-download button__icon"></i></a>
-                        </div>
-                    </div> <!-- About__data -->
-                </div> <!-- About__container -->
-            </section> <!-- About -->
+                        <div class="conhecimento__limiter hidden">
+                            <div class="conhecimento__single">
+                                <div class="conhecimento__header">
+                                    <i class="fab fa-html5"></i>
+                                    <h2>HTML5</h2> 
+                                </div> <!-- Conhecimento__header -->
+                
+                                <div class="conhecimento__text">
+                                    <p>Com as mudanças do HTML5 otimizar sites e sistemas de buscas do Google ficou ainda mais fácil. Disponível em diversas plataformas e com ótima performance em computadores, dispositivos móveis e tablets.</p>
+                                </div> <!-- Conhecimento__text -->
+                            </div> <!-- Conhecimento__single -->
+                        </div> <!-- Conhecimento__limiter -->
 
-            <section class="skills section" id="skills">
-                <h2 class="section__title">Habilidades</h2>
-                <span class="section__subtitle">Meu nível técnico</span>
+                        <div class="conhecimento__limiter hidden2">
+                            <div class="conhecimento__single">
+                                <div class="conhecimento__header">
+                                    <i class="fab fa-less"></i>
+                                    <i class="fab fa-sass"></i>
+                                    <h2>Pré-processadores CSS</h2>
+                                </div> <!-- Conhecimento__header -->
+                
+                                <div class="conhecimento__text">
+                                    <p>Os pré-processadores facilitam a manutenção do código, podendo também serem organizados através de uma importação quando for necessário uma maior flexibilidade e reutilização</p>
+                                </div> <!-- Conhecimento__text -->
+                            </div> <!-- Conhecimento__single -->
+                        </div> <!-- Conhecimento__limiter -->
 
-                <div class="skills__container container grid">
-                    <!-- <div> -->
-                        <div class="skills__content skills__open">
-                            <div class="skills__header">
-                                <i class="uil uil-brackets-curly skills__icon"></i>
-                                <div>
-                                    <h1 class="skills__title">Frontend developer</h1>
-                                    <span class="skills__subtitle"> 1 Ano</span>
-                                </div>
-                                <i class="uil uil-angle-down skills__arrow"></i>
-                            </div> <!-- Skills__header -->
+                        <div class="conhecimento__limiter hidden">
+                            <div class="conhecimento__single">
+                                <div class="conhecimento__header">
+                                    <i class="fab fa-js"></i>
+                                    <h2>JavaScript</h2>
+                                </div> <!-- Conhecimento__header -->
+                
+                                <div class="conhecimento__text">
+                                    <p>Alta compatibilidade com plataformas, sistemas e navegadores de web. Mais leve e rápida do que outras linguagens de programação, tornando as páginas de internet mais dinâmicas e interativas, características essenciais do UX. Com navegadores que interpretam a linguagem por conta própria, tirando a necessidade de usar um compilador.</p>
+                                </div> <!-- Conhecimento__text -->
+                            </div> <!-- Conhecimento__single -->
+                        </div> <!-- Conhecimento__limiter -->
 
-                            <div class="skills__list grid">
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">HTML</h3>
-                                        <span class="skills__number">70%</span>
-                                    </div> <!-- Skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__html"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
+                        <div class="conhecimento__limiter hidden2">
+                            <div class="conhecimento__single">
+                                <div class="conhecimento__header">
+                                    <i class="fab fa-github"></i>
+                                    <h2>Git e GitHub</h2>
+                                </div> <!-- Conhecimento__header -->
+                
+                                <div class="conhecimento__text">
+                                    <p><b>Confiabilidade</b>: com um sistema centralizado evita que os problemas surjam no servidor impedindo o desenvolvimento de todo um trabalho. Um sistema distribuído impede riscos, pois os repositórios dos programadores servem como cópias de backup permitindo que o trabalho de um time não seja interrompido por problemas de servidor.</p><br>
+                                    <p><b>Redução de custos com o servidor</b>: o repositório central funciona como repositório oficial, ao invés de ter uma função de processador central dos pedidos. Assim, a carga de processamento é distribuída pelas máquinas dos programadores.</p>
+                                </div> <!-- Conhecimento__text -->
+                            </div> <!-- Conhecimento__single -->
+                        </div> <!-- Conhecimento__limiter -->
 
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">CSS</h3>
-                                        <span class="skills__number">50%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__css"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
+                        <div class="conhecimento__limiter hidden">
+                            <div class="conhecimento__single">
+                                <div class="conhecimento__header">
+                                    <i class="fab fa-php"></i>
+                                    <h2>PHP</h2>
+                                    <p>Atualmente estudando</p>
+                                </div> <!-- Conhecimento__header -->
+                
+                                <div class="conhecimento__text">
+                                    <p><b>É Multiplataforma</b>. É a facilidade que os usuários têm de poder usar e rodar a linguagem PHP numa variedade de sistemas operacionais. Windows, Linux (e suas distribuições) e MacOS são alguns deles. O mesmo acontece entre os navegadores: Chrome, Safari, Edge, Firefox e Opera, entre outros, são todos compatíveis.</p>
+                                    <br>
+                                    <p><b>Alto Desempenho</b>. O PHP é capaz de suportar grandes quantidades de dados. Com isso, a linguagem consegue executar muitas funções e consumir muitos recursos ao mesmo tempo. E sem comprometer o desempenho e a velocidade do servidor em que está hospedado.</p>
+                                </div> <!-- Conhecimento__text -->
+                            </div> <!-- Conhecimento__single -->
+                        </div> <!-- Conhecimento__limiter -->
 
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">SCSS</h3>
-                                        <span class="skills__number">10%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__scss"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
-
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">LESS</h3>
-                                        <span class="skills__number">10%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__less"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
-
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">JQuery</h3>
-                                        <span class="skills__number">10%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__jquery"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">JavaScript</h3>
-                                        <span class="skills__number">20%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__js"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
-                            </div> <!-- Skills__list -->
-                        </div> <!-- Skills__content -->
-
-                        <div class="skills__content skills__close">
-                            <div class="skills__header">
-                                <i class="uil uil-database skills__icon"></i>
-                                <div>
-                                    <h1 class="skills__title">Backend developer</h1>
-                                    <span class="skills__subtitle"> -1 Ano</span>
-                                </div>
-                                <i class="uil uil-angle-down skills__arrow"></i>
-                            </div> <!-- Skills__header -->
-
-                            <div class="skills__list grid">
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">PHP</h3>
-                                        <span class="skills__number">20%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__php"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
+                        <div class="conhecimento__limiter hidden2">
+                            <div class="conhecimento__single">
+                                <div class="conhecimento__header">
+                                    <i class="fas fa-pen"></i>
+                                    <h2>Design</h2>
+                                </div> <!-- Conhecimento__header -->
                                 
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">Node JS</h3>
-                                        <span class="skills__number">5%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__node"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
+                                <div class="conhecimento__text">
+                                    <p><b>Super flexibilidade</b>: sites com web design responsivo são fluídos, isto é, seus conteúdos se adaptam livremente a todas as resoluções de tela e todos os dispositivos, tanto os grids quanto as imagens. Assim como um líquido se espalha ou dilui para permitir que o conteúdo caiba num espaço apertado mantendo a aparência, a fluidez do web design responsivo alcança o mesmo resultado com o conteúdo do website em uma tela.</p>
+                                </div> <!-- Conhecimento__text -->
+                            </div> <!-- Conhecimento__single -->
+                        </div> <!-- Conhecimento__limiter -->
 
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">MySql</h3>
-                                        <span class="skills__number">20%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__mysql"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
+                    </div> <!-- Conhecimento__wrapper -->
+                </div> <!-- Container -->
+            </section> <!-- #Conhecimento -->
 
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">MongoDB</h3>
-                                        <span class="skills__number">5%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__mongodb"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
-                            </div> <!-- Skills__list -->
-                        </div> <!-- Skills__content -->
+            <section id="projetos">
+                <div class="container">
+                    <div class="section__header">
+                        <h2>Projetos</h2>
+                    </div> <!-- Section__header -->
+                    
+                    <div class="projetos__wrapper">
+                        <div class="projetos__single">
+                            <div class="projetos__img__wrapper">
+                                <img src="./img/portfolio_v1.png" alt="Primeira versão do portfólio">
+                            </div> <!-- Projetos__img__wrapper -->
 
-                        <div class="skills__content skills__close">
-                            <div class="skills__header">
-                                <i class="uil uil-swatchbook skills__icon"></i>
+                            <div class="projetos__text">
                                 <div>
-                                    <h1 class="skills__title">Designer</h1>
-                                    <span class="skills__subtitle"> -1 Ano</span>
+                                    <h2>Portfólio primera versão</h2>
+                                    <p>Versão teste usando JavaScript.</p>
                                 </div>
-                                <i class="uil uil-angle-down skills__arrow"></i>
-                            </div> <!-- Skills__header -->
+                            </div> <!-- Projetos__text -->
+                        </div> <!--Projetos__single -->
 
-                            <div class="skills__list grid">
-                                <div class="skills__data">
-                                    <div class="skills__titles">
-                                        <h3 class="skills__name">Figma</h3>
-                                        <span class="skills__number">10%</span>
-                                    </div> <!-- skills__titles -->
-                                    <div class="skills__bar">
-                                        <span class="skills__percentage skills__figma"></span>
-                                    </div> <!-- Skills__bar -->
-                                </div> <!-- Skills__data -->
-                            </div> <!-- Skills__list -->
-                        </div> <!-- Skills__content -->
-                    <!-- </div> -->
-                </div> <!-- Skills__container -->
-            </section> <!-- SKills -->
+                        <div class="projetos__single">
+                            <div class="projetos__img__wrapper">
+                                <img src="./img/Projeto_happy.png" alt="Projeto Happy">
+                            </div> <!-- Projetos__img__wrapper -->
 
-            <section class="qualification section">
-                <h2 class="section__title">Qualificações</h2>
-                <span class="section__subtitle">Minha jornada pessoal</span>
-
-                <div class="qualification__container container">
-                    <div class="qualification__tabs">
-                        <div class="qualification__button button--flex qualification__active" data-target="#education">
-                            <i class="uil uil-graduation-cap qualification__icon"></i>
-                            Educação
-                        </div> <!-- Qualification__button -->
-                        <div class="qualification__button button--flex" data-target="#work">
-                            <i class="uil uil-briefcase-alt qualification__icon"></i>
-                            Trabalho
-                        </div> <!-- Qualification__button -->
-                    </div> <!-- Qualification__tabs -->
-
-                    <div class="qualification__sections">
-                        <div class="qualification__content qualification__active" data-content id="education">
-                            <div class="qualification__data">
+                            <div class="projetos__text">
                                 <div>
-                                    <h3 class="qualification__title">Dev Frontend</h3>
-                                    <span class="qualification__subtitle">Danki Code - EAD</span>
-                                    <div class="qualification__calendar">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2020 - 2021
-                                    </div> <!-- Qualification__calendar -->
+                                    <h2>Projeto Happy</h2>
+                                    <p>Projeto feito na semana NLW(Next Level Week) da Rocketseat. Foi utilizado Sass, JavaScript, NodeJS com Sqlite e Handlebars.
+                                        <a href="https://github.com/LucasFrostyWolf/NLW-3" target="_blank">Repositório</a>
+                                    </p>
+                                    
                                 </div>
-                                <div>
-                                    <span class="qualification__rounder"></span>
-                                    <span class="qualification__line"></span>
-                                </div>
-                            </div> <!-- Qualification__data -->
+                            </div> <!-- Projetos__text -->
+                        </div> <!--Projetos__single -->
+                    </div> <!-- Projetos__wrapper -->
+                </div> <!-- Container -->
+            </section> <!-- #Projetos -->
 
-                            <div class="qualification__data">
-                                <div></div>
-                                
-                                <div>
-                                    <span class="qualification__rounder"></span>
-                                    <span class="qualification__line"></span>
-                                </div>
-                                
-                                <div>
-                                    <h3 class="qualification__title">Dev Backend</h3>
-                                    <span class="qualification__subtitle">Danki Code - EAD</span>
-                                    <div class="qualification__calendar">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2020 - 2021
-                                    </div> <!-- Qualification__calendar -->
-                                </div>
-                            </div> <!-- Qualification__data -->
+            <section id="sobre">
+                <div class="container">
+                    <div class="section__header">
+                        <h2>Sobre Mim</h2>
+                    </div> <!-- Section__header-->
 
-                            <div class="qualification__data">
-                                <div>
-                                    <h3 class="qualification__title">Web Design</h3>
-                                    <span class="qualification__subtitle">Danki Code - EAD</span>
-                                    <div class="qualification__calendar">
-                                        <i class="uil uil-calendar-alt"></i>
-                                        2021 - 2022
-                                    </div> <!-- Qualification__calendar -->
-                                </div>
-                                <div>
-                                    <span class="qualification__rounder"></span>
-                                </div>
-                            </div> <!-- Qualification__data -->
-                        </div> <!-- Qualification__content -->
-
-                        <div class="qualification__content" data-content id="work">
-
-                        </div> <!-- Qualification__content -->
-                    </div> <!-- Qualification__sections -->
-                </div> <!-- Qualification__container -->
-            </section> <!-- Qualification -->
-
-            <section class="services section" id="services">
-                <h2 class="section__title">Serviços</h2>
-                <span class="section__subtitle">Meus serviços</span>
-
-                <div class="services__container container grid">
-
-                    <div class="services__content">
-                        <div>
-                            <i class="uil uil-arrow services__icon"></i>
-                            <h3 class="services__title">Frontend <br> Developer</h3>
+                    <div class="sobre__container">
+                        <div class="sobre__text">
+                            <h2>Lucas Gabriel Machado</h2>
+                            <p>Brasileiro, 24 anos, apaixonado por tecnologia. Estudo programação devido a extrema curiosidade sobre a maneira em que os websites são feitos.  Front-End Danki Code e Back-End com PHP.</p>
                         </div>
-                        <span class="button button--flex button--small button--link services__button">
-                            Ver mais
-                            <i class="uil uil-arrow-circle-right button__icon"></i>
-                        </span> <!-- Button -->
 
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <h4 class="services__modal-title">Frontend <br> Developer</h4>
-                                <i class="uil uil-times services__modal-close"></i>
-
-                                <ul class="services__modal-services grid">
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Desenvolvo a interface do usuário.</p>
-                                    </li> <!-- Services__modal-service-->
-
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Desenvolvimento páginas web.</p>
-                                    </li> <!-- Services__modal-service-->
-
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Interações da interface</p>
-                                    </li> <!-- Services__modal-service-->
-
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Páginas responsivas</p>
-                                    </li> <!-- Services__modal-service-->
-                                </ul> <!-- Services__modal-services -->
-                            </div> <!-- Services__modal-content -->
-                        </div> <!-- Services__modal-->
-                    </div> <!-- Services__content -->
-
-                    <div class="services__content">
-                        <div>
-                            <i class="uil uil-database services__icon"></i>
-                            <h3 class="services__title">Backend <br> Developer</h3>
+                        <div class="img__wrapper">
+                            <img src="./img/foto_2.jpg" alt="Foto sobre">
                         </div>
-                        <span class="button button--flex button--small button--link services__button">
-                            Ver mais
-                            <i class="uil uil-arrow-circle-right button__icon"></i>
-                        </span> <!-- Button -->
+                    </div> <!-- Sobre__container-->
+                </div> <!-- Container -->
+            </section> <!-- #Sobre -->
+        </main>
 
-                        <div class="services__modal">
-                            <div class="services__modal-content">
-                                <h4 class="services__modal-title">Backend <br> Developer</h4>
-                                <i class="uil uil-times services__modal-close"></i>
+        <footer>
+            <div class="container">
+                <p>&copy; Todos os direitos reservados - Desenvolvido por Lucas G. Machado</p>
+            </div>
+        </footer>
+        
+        <a href="#" class="back__to__top"><i class="fa fa-arrow-up"></i></a>
+        <div class="switch__container">
+            <input type="checkbox" id="night-mode" class="switch__shadow switch " aria-label="night-mode" />
+            <label class="switch__button" for="night-mode"></label>
+        </div> <!-- Switch__container -->
 
-                                <ul class="services__modal-services grid">
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Desenvolvo a inserção dos dados no banco de dados</p>
-                                    </li> <!-- Services__modal-service-->
-
-                                    <li class="services__modal-service">
-                                        <i class="uil uil-check-circle services__modal-icon"></i>
-                                        <p>Consultas no banco de dados</p>
-                                    </li> <!-- Services__modal-service-->
-                                </ul> <!-- Services__modal-services -->
-                            </div> <!-- Services__modal-content -->
-                        </div> <!-- Services__modal-->
-                    </div> <!-- Services__content -->
-                </div> <!-- Services__container -->
-            </section> <!-- Services -->
-
-            <section class="portfolio section" id="portfolio">
-                <h2 class="section__title">Potfólio</h2>
-                <span class="section__subtitle">Trabalhos recentes</span>
-
-                <div class="portfolio__container container swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="./img/portfolio_v1.png" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">Versão 1 do portfólio</h3>
-                                <p class="portfolio__description">Essa foi a primeira versão que fiz do portfólio usando, Less e JavaScript.</p>
-                                <a href="https://github.com/LucasMachadoDev/Portfolio/tree/v1.0" target="_blank" class="button button--flex button--small portfolio__button">
-                                    Repositorio
-                                    <i class="uil uil-arrow-circle-right button__icon"></i>
-                                </a>
-                            </div> <!-- Portfolio__data -->
-                        </div> <!-- Portfolio__content -->
-
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="./img/Projeto_happy.png" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">Projeto Happy</h3>
-                                <p class="portfolio__description">Projeto feito na semana NLW(Next Level Week) da Rocketseat. Foi utilizado Sass, JavaScript, NodeJS com Sqlite e Handlebars.</p>
-                                <a href="https://github.com/LucasMachadoDev/NLW-3" target="_blank" class="button button--flex button--small portfolio__button">
-                                    Repositorio
-                                    <i class="uil uil-arrow-circle-right button__icon"></i>
-                                </a>
-                            </div> <!-- Portfolio__data -->
-                        </div> <!-- Portfolio__content -->
-                    </div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next">
-                        <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                    </div>
-                    <div class="swiper-button-prev">
-                        <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div> <!-- Portfolio__container -->
-            </section> <!-- Portfolio -->
-        </main> <!-- Main -->
-
-        <footer class="footer">
-            <div class="footer__bg">
-                <div class="footer__container container grid">
-                    <div>
-                        <h1 class="footer__title">Lucas</h1>
-                        <span class="footer__subtitle">Fullstack Developer</span>
-                    </div>
-
-                    <ul class="footer__links">
-                        <li><a href="#about" class="footer__link">sobre</a></li>
-                        <li><a href="#skills" class="footer__link">Skills</a></li>
-                        <li><a href="#services" class="footer__link">Serviços</a></li>
-                    </ul> <!-- Footer__links-->
-
-                    <div class="footer__socials">
-                        <a href="https://www.facebook.com/lucas.g.machado.56" target="_blank" class="footer__social"><i class="uil uil-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/lucas_frostywolf/" target="_blank" class="footer__social"><i class="uil uil-instagram"></i></a>
-                    </div> <!-- Footer__socials -->
-                </div> <!-- Footer__container -->
-
-                <p class="footer__copy">&#169; Lucas, Todos os direitos reservados</p>
-            </div> <!-- Footer__bg -->
-        </footer> <!-- Footer -->
-
-        <a href="#home" class="scrollup" id="scroll-up"><i class="uil uil-arrow-up scrollup__icon"></i></a>
-
-        <script src="./js/swiper-bundle.min.js"></script>
-        <script src="./js/script.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery.easing.min.js"></script>
+        <script src="./js/script.min.js"></script>
     </body>
-</html>
+</html> 
